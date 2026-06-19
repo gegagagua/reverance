@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "title": "Reverance by Otium — Invest in Batumi Real Estate",
+    "description": "Reverance by Otium — a premium residential investment in Batumi, Georgia. 12–15% expected ROI, sea-side location, full property management. Buy property in Georgia with high ROI.",
+    "keywords": "Invest in Batumi, Invest in Georgia, Batumi Real Estate Investment, Buy Property in Georgia, High ROI Property Investment"
+  },
+  "nav": {
+    "brand": "Reverance",
+    "menu": [
+      { "label": "About", "href": "#about" },
+      { "label": "Investment", "href": "#investment" },
+      { "label": "Apartments", "href": "#flats" },
+      { "label": "Location", "href": "#location" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "call": "Request a Call",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Batumi, Georgia · Completion 2026",
+    "title": "Invest in Batumi's sea-side living.",
+    "subtitle": "A premium residential investment by Otium — 12–15% expected ROI, panoramic sea views, and full rental management.",
+    "location": "750 m from the sea",
+    "completion": "Delivery 2026",
+    "cta": "Request a Call"
+  },
+  "floorplan": {
+    "items": [
+      {
+        "title": "Reverance by Otium",
+        "description": "Discover a unique investment opportunity at Reverance – a premium residential complex that combines the architectural elegance of modernity, resident-oriented design, and the highest standards of living. Located in one of Batumi's most dynamically developing districts, the project is especially attractive to investors seeking stable growth and promising opportunities in Georgia's real estate market."
+      },
+      {
+        "title": "Batumi",
+        "description": "Batumi is today one of the fastest-growing and most tourist-active regional markets, offering a unique opportunity for investors seeking both stable income and increasing property value."
+      }
+    ]
+  },
+  "flats": {
+    "heading": "Apartments",
+    "eyebrow": "Floor plans",
+    "priceLabel": "Starting price",
+    "items": [
+      { "title": "Studio", "area": "32.2 m²", "price": "$54,000" },
+      { "title": "One-bedroom apartment", "area": "55 m²", "price": "$89,000" },
+      { "title": "Two-bedroom apartment", "area": "65 m²", "price": "$112,000" }
+    ]
+  },
+  "gallery": {
+    "heading": "Gallery",
+    "all": "View all",
+    "categories": [
+      { "slug": "exterior", "name": "Exterior" },
+      { "slug": "interior", "name": "Interior" },
+      { "slug": "facilities", "name": "Facilities" }
+    ]
+  },
+  "overview": {
+    "eyebrow": "Amenities",
+    "heading": "Considered for everyday life.",
+    "items": [
+      {
+        "title": "Rooftop Infinity Pool",
+        "description": "An infinity pool suspended above the Black Sea, open to residents all year round."
+      },
+      {
+        "title": "Private Wellness & Spa",
+        "description": "Sauna, hammam, and treatment rooms — a quiet retreat steps from your door."
+      },
+      {
+        "title": "Concierge & Lobby",
+        "description": "A 24-hour reception and a double-height lobby that welcomes you home."
+      },
+      {
+        "title": "Underground Parking",
+        "description": "Secure resident parking with valet service and direct lift access."
+      },
+      {
+        "title": "Fitness Studio",
+        "description": "A fully equipped gym with personal-training space, open day and night."
+      },
+      {
+        "title": "Landscaped Gardens",
+        "description": "Sheltered courtyards and green terraces designed for quiet everyday calm."
+      }
+    ]
+  },
+  "investment": {
+    "eyebrow": "Why invest",
+    "heading": "A measured return on a coastal asset.",
+    "intro": "Batumi's tourism market is growing fast. Reverance is built to perform — for stable income today and rising value tomorrow.",
+    "stats": [
+      { "value": "12–15%", "label": "Expected annual ROI" },
+      { "value": "60–70%", "label": "Expected occupancy" },
+      { "value": "2026", "label": "Project completion" }
+    ],
+    "reasons": [
+      {
+        "title": "Growing Tourism Market",
+        "description": "Record visitor numbers and year-round demand make Batumi one of the region's most active rental markets."
+      },
+      {
+        "title": "Property Management Service",
+        "description": "Otium manages your apartment end-to-end — bookings, maintenance, and payouts — so your return is fully passive."
+      },
+      {
+        "title": "High ROI Property Investment",
+        "description": "Sea-side positioning and premium finishing keep nightly rates and resale value strong."
+      },
+      {
+        "title": "Stable, Foreign-Friendly Market",
+        "description": "Foreigners can own freehold property in Georgia with low fees and a fast, transparent process."
+      }
+    ],
+    "cta": {
+      "title": "Get the full ROI model & investment presentation",
+      "button": "Request Investment Presentation"
+    }
+  },
+  "location": {
+    "eyebrow": "Location",
+    "heading": "Two addresses, one vision.",
+    "subtitle": "Batumi, Georgia",
+    "highlights": [
+      { "icon": "📍", "label": "750 m from the sea" },
+      { "icon": "🏟", "label": "Near Batumi Stadium" },
+      { "icon": "🌴", "label": "Close to New Boulevard" }
+    ],
+    "constructionLabel": "Construction site",
+    "construction": "Adlia 3rd Lane #1, Batumi, Georgia",
+    "salesLabel": "Sales office",
+    "sales": "Anatoli Kacharava Street #5, Batumi, Georgia",
+    "mapTitle": "Reverance by Otium on the map"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Investor questions, answered.",
+    "items": [
+      {
+        "q": "Can a foreigner buy property in Georgia?",
+        "a": "Yes. Georgia allows foreign nationals to own residential property freehold, with no residency requirement and a fast, transparent registration process."
+      },
+      {
+        "q": "What are the legal fees?",
+        "a": "Purchase costs in Georgia are low — registration and notary fees are typically under 1% of the property value. We share a full breakdown with the investment presentation."
+      },
+      {
+        "q": "Can Otium manage my rental?",
+        "a": "Yes. Our property-management service handles bookings, guest communication, cleaning, maintenance, and payouts, so your return stays fully passive."
+      },
+      {
+        "q": "What is the expected ROI?",
+        "a": "We model a 12–15% expected annual ROI at 60–70% occupancy, based on current Batumi market rates. The full model is available on request."
+      },
+      {
+        "q": "When is project completion?",
+        "a": "Reverance is scheduled for delivery in 2026. Sales-stage pricing applies until completion."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Begin a conversation.",
+    "subtitle": "Leave your details and our sales team will respond within one business day with the full ROI model and investment presentation.",
+    "name": "Full name",
+    "phone": "Phone number",
+    "email": "Email address",
+    "emailHint": "Optional",
+    "apartment": "Which apartment type interests you?",
+    "apartmentOptions": ["Studio", "One-bedroom", "Two-bedroom", "Not sure yet"],
+    "channel": "Preferred communication channel",
+    "channels": ["WhatsApp", "Viber", "Phone Call"],
+    "time": "Preferred time to contact",
+    "times": ["Morning (10:00–13:00)", "Afternoon (13:00–17:00)", "Evening (17:00–19:00)"],
+    "send": "Request a Call",
+    "sending": "Sending…",
+    "success": "Thank you. We will contact you shortly.",
+    "error": "Please check your details and try again.",
+    "privacy": "By submitting this form you agree that your personal data may be used to contact you about this project. See our Privacy Policy.",
+    "privacyLink": "Privacy Policy",
+    "callLabel": "Central office",
+    "phoneValue": "+995 032 2 11 11 04",
+    "salesLabel": "Batumi sales office",
+    "salesValue": "+995 501 22 20 20",
+    "hoursLabel": "Working hours · 10:00 – 18:00",
+    "hoursValue": "10:00 – 18:00",
+    "officeLabel": "Sales office",
+    "officeValue": "Anatoli Kacharava Street #5, Batumi, Georgia"
+  },
+  "cta": {
+    "investment": { "title": "Ready to see the numbers?", "button": "Request Investment Presentation" },
+    "apartments": { "title": "Want the plans and pricing?", "button": "Get Apartment Plans & ROI Model" },
+    "location": { "title": "Questions about Batumi?", "button": "Talk to an Investment Advisor" }
+  },
+  "video": { "label": "Take a video tour" },
+  "thankYou": {
+    "eyebrow": "Request received",
+    "title": "Thank you — we'll be in touch.",
+    "subtitle": "Our sales team responds within one business day. Here is what happens next.",
+    "steps": [
+      "We review your request and prepare a tailored ROI model.",
+      "An investment advisor contacts you on your preferred channel.",
+      "You receive the full investment presentation and apartment plans."
+    ],
+    "home": "Back to home"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: June 2026",
+    "body": [
+      {
+        "heading": "What we collect",
+        "text": "When you submit a contact form we collect your name, phone number, optional email, apartment preference, and preferred contact channel and time."
+      },
+      {
+        "heading": "How we use it",
+        "text": "Your data is used solely to contact you about Reverance by Otium and to prepare the investment materials you requested. We never sell your data."
+      },
+      {
+        "heading": "Tracking",
+        "text": "We use Google Analytics, Google Tag Manager, and Meta Pixel to measure marketing performance. You can opt out via your browser settings."
+      },
+      {
+        "heading": "Your rights",
+        "text": "You may request access to, correction of, or deletion of your personal data at any time by writing to info@otium.ge."
+      }
+    ]
+  },
+  "mobileDock": {
+    "label": "Talk to us",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "viber": "Viber"
+  },
+  "footer": {
+    "address": "Batumi, Anatoli Kacharava Street #5",
+    "callUs": "Call us",
+    "phone": "+995 032 2 11 11 04",
+    "hours": "Working hours",
+    "hoursTime": "10:00 – 18:00",
+    "emailUs": "Write to us",
+    "email": "info@otium.ge",
+    "ctaTitle": "Talk to an investment advisor.",
+    "ctaButton": "Request a Call",
+    "privacyLabel": "Privacy Policy",
+    "copyright": "Copyright 2025 - Otium Development"
+  }
+}

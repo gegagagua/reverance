@@ -1,0 +1,6 @@
+.next
+node_modules
+public
+yarn.lock
+next-env.d.ts
+reverance-old
