@@ -207,22 +207,106 @@
   "privacy": {
     "title": "Privacy Policy",
     "updated": "Last updated: June 2026",
+    "intro": [
+      "This website, www.reverance.ge (hereinafter referred to as the \"Website\"), is the property of LLC MN Otium Development (identification code: 405742157) (hereinafter referred to as \"we\" or \"us\"). This page informs you about how we collect, use, and process the personal data of our website users.",
+      "We use the personal data you provide to improve our service and website. By using the Website, you agree to our processing of your personal data in accordance with the law, for the purposes specified in this Privacy Policy."
+    ],
     "body": [
       {
-        "heading": "What we collect",
-        "text": "When you submit a contact form we collect your name, phone number, optional email, apartment preference, and preferred contact channel and time."
+        "heading": "What Data Do We Collect?",
+        "blocks": [
+          { "text": "Our company collects data including, but not limited to:", "items": [] },
+          {
+            "text": "",
+            "items": [
+              "Personal identification data (name, surname, email, address, phone number, etc.)",
+              "Your IP address"
+            ]
+          }
+        ]
       },
       {
-        "heading": "How we use it",
-        "text": "Your data is used solely to contact you about Reverance by Otium and to prepare the investment materials you requested. We never sell your data."
+        "heading": "How Do We Collect Your Data?",
+        "blocks": [
+          {
+            "text": "Most of the information we collect is provided directly by you. We collect and process data when you:",
+            "items": []
+          },
+          {
+            "text": "",
+            "items": [
+              "Register on our website or place an order/request",
+              "Otherwise interact with our website or services"
+            ]
+          },
+          {
+            "text": "This list is not exhaustive, and we may also obtain personal data from indirect sources.",
+            "items": []
+          }
+        ]
       },
       {
-        "heading": "Tracking",
-        "text": "We use Google Analytics, Google Tag Manager, and Meta Pixel to measure marketing performance. You can opt out via your browser settings."
+        "heading": "How Will We Use Your Data?",
+        "blocks": [
+          { "text": "Our company collects your data so that we can:", "items": [] },
+          {
+            "text": "",
+            "items": [
+              "Process your orders and manage your account",
+              "Send promotional offers via email",
+              "Administer and improve the website",
+              "Fulfill other purposes defined in this policy"
+            ]
+          },
+          {
+            "text": "With your consent, we may share your data with partner companies for marketing purposes.",
+            "items": []
+          }
+        ]
       },
       {
-        "heading": "Your rights",
-        "text": "You may request access to, correction of, or deletion of your personal data at any time by writing to info@otium.ge."
+        "heading": "How Do We Store Your Data?",
+        "blocks": [
+          {
+            "text": "We implement reasonable technical and organizational security measures to protect your personal data from unauthorized access, use, loss, or destruction.",
+            "items": []
+          },
+          {
+            "text": "We retain your data in accordance with applicable law only for as long as necessary to fulfill the purposes outlined in this policy. Once no longer needed, we will delete or destroy your data.",
+            "items": []
+          }
+        ]
+      },
+      {
+        "heading": "What Rights Do You Have?",
+        "blocks": [
+          { "text": "You have the right to:", "items": [] },
+          {
+            "text": "",
+            "items": [
+              "Request access to your data",
+              "Request correction of inaccurate data",
+              "Request deletion of your data",
+              "Request restriction of processing",
+              "Request transfer of your data to another organization or directly to you"
+            ]
+          },
+          { "text": "We will respond to all requests within 10 business days.", "items": [] }
+        ]
+      },
+      {
+        "heading": "What Are Cookies?",
+        "blocks": [
+          {
+            "text": "Cookies are small text files stored on your device. They help websites remember your preferences and usage patterns in order to improve your experience.",
+            "items": []
+          },
+          {
+            "text": "We may collect information automatically through cookies or similar technologies.",
+            "items": []
+          },
+          { "text": "For more information about cookies, visit allaboutcookies.org.", "items": [] }
+        ]
       }
     ]
   },

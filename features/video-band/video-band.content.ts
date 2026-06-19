@@ -1,5 +1,5 @@
 export const VIDEO = {
-  youtubeId: 'C6rf51uHWJg',
+  youtubeId: '_-PpeyIos8Q',
   image: '/theme/images/background/2.webp',
 } as const
 

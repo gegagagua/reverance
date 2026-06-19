@@ -29,7 +29,7 @@ export function Flats({ content }: { content: Dictionary['flats'] }) {
                   alt={flat.title}
                   fill
                   className="object-cover"
-                  sizes="100vw"
+                  sizes="(max-width: 1200px) 100vw, 1140px"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
                   <span className="text-2xl font-medium">{flat.title}</span>

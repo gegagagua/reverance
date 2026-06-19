@@ -6,9 +6,10 @@ import { getDictionary } from '@/i18n/dictionaries'
 import { Analytics, AnalyticsNoScript } from '@/features/analytics'
 import './globals.css'
 
-// Exact theme fonts: Jost (headings) + DM Sans (body).
-const heading = Jost({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-jost' })
-const body = DM_Sans({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-dm' })
+// Exact theme fonts: Jost (headings, only 400 is used) + DM Sans (body, 400/500).
+// `display: swap` keeps text visible during font load so it never blocks FCP/LCP.
+const heading = Jost({ subsets: ['latin'], weight: ['400'], display: 'swap', variable: '--font-jost' })
+const body = DM_Sans({ subsets: ['latin'], weight: ['400', '500'], display: 'swap', variable: '--font-dm' })
 
 type Params = { params: Promise<{ lang: string }> }
 

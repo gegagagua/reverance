@@ -52,6 +52,7 @@ export function Gallery({ content }: { content: Dictionary['gallery'] }) {
                   src={item.src}
                   alt=""
                   fill
+                  quality={65}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />

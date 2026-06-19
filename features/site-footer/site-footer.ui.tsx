@@ -7,10 +7,10 @@ import { SOCIAL_LINKS } from './site-footer.content'
 /** Server Component, dark footer: final CTA, brand, contact columns, socials,
  * and the privacy-policy link. The CTA scrolls to the single contact form. */
 export function SiteFooter({ content, locale }: { content: Dictionary['footer']; locale: Locale }) {
-  const columns = [
-    { label: content.callUs, value: content.phone },
+  const columns: { label: string; value: string; href?: string }[] = [
+    { label: content.callUs, value: content.phone, href: `tel:${content.phone.replace(/\s+/g, '')}` },
     { label: content.hours, value: content.hoursTime },
-    { label: content.emailUs, value: content.email },
+    { label: content.emailUs, value: content.email, href: `mailto:${content.email}` },
   ]
 
   return (
@@ -34,7 +34,15 @@ export function SiteFooter({ content, locale }: { content: Dictionary['footer'];
           {columns.map((col) => (
             <div key={col.label} className="flex flex-col gap-1">
               <dt className="text-sm uppercase tracking-widest text-accent">{col.label}</dt>
-              <dd className="text-white/80">{col.value}</dd>
+              <dd className="text-white/80">
+                {col.href ? (
+                  <a href={col.href} className="transition-colors hover:text-white">
+                    {col.value}
+                  </a>
+                ) : (
+                  col.value
+                )}
+              </dd>
             </div>
           ))}
         </dl>
