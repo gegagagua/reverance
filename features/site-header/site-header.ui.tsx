@@ -51,7 +51,11 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className={cn('hidden sm:inline-flex', buttonClass({ variant: 'accent', size: 'sm' }))}
+            className={cn(
+              'hidden whitespace-nowrap sm:inline-flex',
+              buttonClass({ variant: 'accent', size: 'sm' }),
+              'h-8 px-3 text-xs lg:h-9 lg:px-4 lg:text-sm'
+            )}
           >
             {nav.call}
           </a>
