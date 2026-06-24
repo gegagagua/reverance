@@ -34,7 +34,7 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
             width={200}
             height={56}
             priority
-            className={cn('w-auto', scrolled ? 'h-9' : 'h-12', !solid && 'brightness-0 invert')}
+            className={cn('w-auto', scrolled ? 'h-8 sm:h-9' : 'h-9 sm:h-12', !solid && 'brightness-0 invert')}
           />
         </a>
         <nav className="hidden items-center gap-9 lg:flex">

@@ -5,12 +5,15 @@ import { cn } from '@/lib/cn'
 import { HERO_SLIDES } from './hero-slider.content'
 import { useHeroSlider } from './hero-slider.logic'
 
-/** Full-bleed cross-fading background carousel for the hero. */
+const ARROW =
+  'absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-2xl leading-none text-white backdrop-blur transition-colors hover:bg-white/40 md:flex'
+
+/** Full-bleed cross-fading hero carousel: arrow buttons on desktop, swipe on mobile. */
 export function HeroSlider() {
-  const { index, setIndex, hydrated } = useHeroSlider()
+  const { index, setIndex, next, prev, hydrated, swipe } = useHeroSlider()
 
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0" {...swipe}>
       {HERO_SLIDES.map((src, i) =>
         // Only the LCP slide loads up front; the rest mount after first paint.
         i === 0 || hydrated ? (
@@ -30,6 +33,12 @@ export function HeroSlider() {
           />
         ) : null
       )}
+      <button type="button" aria-label="Previous slide" onClick={prev} className={cn(ARROW, 'left-5')}>
+        ‹
+      </button>
+      <button type="button" aria-label="Next slide" onClick={next} className={cn(ARROW, 'right-5')}>
+        ›
+      </button>
       <div className="absolute bottom-24 left-1/2 z-10 flex -translate-x-1/2 gap-2">
         {HERO_SLIDES.map((src, i) => (
           <button

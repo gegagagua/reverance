@@ -315,9 +315,7 @@
   },
   "mobileDock": {
     "label": "Связаться",
-    "call": "Звонок",
-    "whatsapp": "WhatsApp",
-    "viber": "Viber"
+    "whatsapp": "WhatsApp"
   },
   "footer": {
     "address": "Батуми, ул. Анатолия Качарава #5",

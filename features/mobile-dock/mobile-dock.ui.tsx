@@ -8,8 +8,8 @@ import { useMobileDock } from './mobile-dock.logic'
 
 /**
  * Always-available floating contact dock (sticky button + chat widget). Lets a
- * visitor reach WhatsApp, Viber, or a call from any scroll position; every
- * channel click is tracked as a conversion.
+ * visitor reach WhatsApp from any scroll position; every channel click is
+ * tracked as a conversion.
  */
 export function MobileDock({ content }: { content: Dictionary['mobileDock'] }) {
   const { open, toggle } = useMobileDock()

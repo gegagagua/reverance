@@ -315,9 +315,7 @@
   },
   "mobileDock": {
     "label": "დაგვიკავშირდით",
-    "call": "ზარი",
-    "whatsapp": "WhatsApp",
-    "viber": "Viber"
+    "whatsapp": "WhatsApp"
   },
   "footer": {
     "address": "ბათუმი, ანატოლი კაჭარავას ქუჩა #5",

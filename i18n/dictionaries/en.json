@@ -312,9 +312,7 @@
   },
   "mobileDock": {
     "label": "Talk to us",
-    "call": "Call",
-    "whatsapp": "WhatsApp",
-    "viber": "Viber"
+    "whatsapp": "WhatsApp"
   },
   "footer": {
     "address": "Batumi, Anatoli Kacharava Street #5",
