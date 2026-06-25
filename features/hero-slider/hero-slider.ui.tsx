@@ -10,10 +10,10 @@ const ARROW =
 
 /** Full-bleed cross-fading hero carousel: arrow buttons on desktop, swipe on mobile. */
 export function HeroSlider() {
-  const { index, setIndex, next, prev, hydrated, swipe } = useHeroSlider()
+  const { index, setIndex, next, prev, hydrated } = useHeroSlider()
 
   return (
-    <div className="absolute inset-0" {...swipe}>
+    <div className="absolute inset-0">
       {HERO_SLIDES.map((src, i) =>
         // Only the LCP slide loads up front; the rest mount after first paint.
         i === 0 || hydrated ? (
