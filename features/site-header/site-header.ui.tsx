@@ -27,7 +27,7 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
           scrolled ? 'h-16' : 'h-24'
         )}
       >
-        <a href="#top" aria-label={nav.brand} onClick={closeMobile} className="flex items-center">
+        <a href="#top" aria-label={nav.brand} onClick={closeMobile} className="flex shrink-0 items-center">
           <Image
             src="/theme/images/reverancelogo.png"
             alt={nav.brand}
