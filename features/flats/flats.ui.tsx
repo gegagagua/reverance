@@ -21,20 +21,20 @@ export function Flats({ content }: { content: Dictionary['flats'] }) {
         <Heading as="h2" size="lg" className="text-center">
           {content.heading}
         </Heading>
-        <div className="relative" {...swipe}>
+        <div className="relative mx-auto w-full max-w-2xl" {...swipe}>
           <div className="overflow-hidden rounded-2xl">
             <div
               className="flex transition-transform duration-500"
               style={{ transform: `translateX(-${index * 100}%)` }}
             >
               {content.items.map((flat, i) => (
-                <figure key={flat.title} className="relative aspect-[16/9] w-full shrink-0">
+                <figure key={flat.title} className="relative aspect-square w-full shrink-0">
                   <Image
                     src={FLAT_IMAGES[i] ?? FLAT_IMAGES[0] ?? ''}
                     alt={flat.title}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1200px) 100vw, 1140px"
+                    sizes="(max-width: 672px) 100vw, 672px"
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
                     <span className="text-2xl font-medium">{flat.title}</span>

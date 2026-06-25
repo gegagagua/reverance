@@ -12,7 +12,7 @@ export function Hero({ content }: { content: Dictionary['hero'] }) {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden text-white">
       <HeroSlider />
-      <div className="absolute inset-0 bg-black/45" />
+      <div className="pointer-events-none absolute inset-0 bg-black/45" />
       <HeroCopy content={content} />
     </section>
   )
