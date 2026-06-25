@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import type { TouchEvent } from 'react'
+import { useEffect, useState } from 'react'
+import { useSwipe } from '@/lib/use-swipe'
 import { useHeroSliderStore } from './hero-slider.state'
 import { HERO_SLIDES } from './hero-slider.content'
 
@@ -35,23 +35,10 @@ export function useHeroSlider() {
 }
 
 /**
- * Touch handlers for the mobile swipe gesture. Mounted on the hero `<section>`
- * (a common ancestor of the slides and the overlay copy) so swipes anywhere in
- * the hero advance the slide — not only over the bare image.
+ * Mobile swipe for the hero. Returns a ref mounted on the `<section>` (a common
+ * ancestor of the slides and the overlay copy) so swipes anywhere in the hero
+ * advance the slide. Axis-locked, so a horizontal swipe never scrolls the page.
  */
 export function useHeroSwipe() {
-  const touchX = useRef<number | null>(null)
-
-  return {
-    onTouchStart: (e: TouchEvent) => {
-      touchX.current = e.touches[0]?.clientX ?? null
-    },
-    onTouchEnd: (e: TouchEvent) => {
-      const end = e.changedTouches[0]?.clientX
-      if (touchX.current === null || end === undefined) return
-      const dx = end - touchX.current
-      if (Math.abs(dx) > 40) (dx < 0 ? next : prev)()
-      touchX.current = null
-    },
-  }
+  return useSwipe((dir) => (dir > 0 ? next() : prev()))
 }

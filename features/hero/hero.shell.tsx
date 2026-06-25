@@ -9,13 +9,13 @@ import { useHeroSwipe } from '@/features/hero-slider'
  * in the hero advances the slide, not just one landing on the bare image.
  */
 export function HeroShell({ children }: { children: ReactNode }) {
-  const swipe = useHeroSwipe()
+  const swipeRef = useHeroSwipe()
 
   return (
     <section
+      ref={swipeRef}
       id="top"
       className="relative flex min-h-screen items-center overflow-hidden text-white"
-      {...swipe}
     >
       {children}
     </section>

@@ -13,7 +13,7 @@ const ARROW =
 /** One-at-a-time carousel of apartment types: overlaid arrows on desktop,
  * swipe on mobile, with dot indicators below. */
 export function Flats({ content }: { content: Dictionary['flats'] }) {
-  const { index, setIndex, next, prev, swipe } = useFlats(content.items.length)
+  const { index, setIndex, next, prev, swipeRef } = useFlats(content.items.length)
 
   return (
     <section id="flats" className="py-24 sm:py-28">
@@ -21,7 +21,7 @@ export function Flats({ content }: { content: Dictionary['flats'] }) {
         <Heading as="h2" size="lg" className="text-center">
           {content.heading}
         </Heading>
-        <div className="relative mx-auto w-full max-w-2xl" {...swipe}>
+        <div ref={swipeRef} className="relative mx-auto w-full max-w-2xl">
           <div className="overflow-hidden rounded-2xl">
             <div
               className="flex transition-transform duration-500"
