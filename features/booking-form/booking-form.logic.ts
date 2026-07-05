@@ -6,9 +6,9 @@ import { useBookingStore } from './booking-form.state'
 
 /**
  * Bridges the booking store to the form. Field-level selectors keep typing in
- * one input from re-rendering the others. On success it fires the
+ * one input from re-rendering the others. On success it posts the lead to the
+ * CRM (same endpoint the legacy site uses, via `/api/crm/submit`), fires the
  * `form_submission` conversion and routes to the locale's Thank-You page.
- * Swap the stubbed delay for a Server Action / CRM call.
  */
 export function useBookingForm(locale: Locale) {
   const router = useRouter()
@@ -32,14 +32,25 @@ export function useBookingForm(locale: Locale) {
       }
       setStatus('submitting')
       try {
-        await new Promise((resolve) => setTimeout(resolve, 600))
+        const res = await fetch('/api/crm/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name.trim(),
+            phone: `${countryCode}${phone.trim()}`,
+            project: '4969',
+            source: 'landing',
+            lead_form_submit: 'true',
+          }),
+        })
+        if (!res.ok) throw new Error('CRM submission failed')
         track('form_submission', { channel, apartment })
         router.push(`/${locale}/thank-you`)
       } catch {
         setStatus('error')
       }
     },
-    [name, phone, channel, apartment, locale, router, setStatus]
+    [name, countryCode, phone, channel, apartment, locale, router, setStatus]
   )
 
   return { name, countryCode, phone, email, apartment, channel, time, status, update, submit }
