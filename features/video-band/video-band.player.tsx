@@ -1,17 +1,23 @@
 'use client'
 
 import Image from 'next/image'
-import { VIDEO, embedUrl } from './video-band.content'
+import { embedUrl } from './video-band.content'
 import { useDeferredVideo } from './video-band.logic'
 
 /** Click-to-play leaf: shows a facade, then swaps in an inline YouTube iframe. */
-export function VideoPlayer({ label }: { label: string }) {
+export function VideoPlayer({
+  label,
+  video,
+}: {
+  label: string
+  video: { youtubeId: string; image: string }
+}) {
   const { ready, playing, play } = useDeferredVideo()
 
   if (playing) {
     return (
       <iframe
-        src={embedUrl(VIDEO.youtubeId)}
+        src={embedUrl(video.youtubeId)}
         title={label}
         allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
         allowFullScreen
@@ -29,7 +35,7 @@ export function VideoPlayer({ label }: { label: string }) {
       className="group block h-full w-full cursor-pointer"
     >
       <Image
-        src={VIDEO.image}
+        src={video.image}
         alt={label}
         fill
         className="object-cover opacity-80 transition-opacity group-hover:opacity-60"

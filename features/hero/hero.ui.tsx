@@ -9,10 +9,10 @@ import { HeroShell } from './hero.shell'
  * Contact section, so this CTA is not a duplicated form). The copy is hidden on
  * the first slide (see HeroCopy) so the hero opens on the image alone.
  */
-export function Hero({ content }: { content: Dictionary['hero'] }) {
+export function Hero({ content, slides }: { content: Dictionary['hero']; slides: string[] }) {
   return (
     <HeroShell>
-      <HeroSlider />
+      <HeroSlider slides={slides} />
       <div className="pointer-events-none absolute inset-0 bg-black/45" />
       <HeroCopy content={content} />
     </HeroShell>

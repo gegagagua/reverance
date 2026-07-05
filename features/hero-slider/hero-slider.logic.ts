@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react'
 import { useSwipe } from '@/lib/use-swipe'
 import { useHeroSliderStore } from './hero-slider.state'
-import { HERO_SLIDES } from './hero-slider.content'
 
-const COUNT = HERO_SLIDES.length
-const go = (i: number) => useHeroSliderStore.getState().setIndex((i + COUNT) % COUNT)
+// Wrap against the current slide count (set from the admin-editable slide list).
+const go = (i: number) => {
+  const { count, setIndex } = useHeroSliderStore.getState()
+  setIndex(((i % count) + count) % count)
+}
 const next = () => go(useHeroSliderStore.getState().index + 1)
 const prev = () => go(useHeroSliderStore.getState().index - 1)
 
@@ -16,10 +18,13 @@ const prev = () => go(useHeroSliderStore.getState().index - 1)
  * first paint so the UI can hold back the non-LCP slides until then — only slide 0
  * is fetched on load.
  */
-export function useHeroSlider() {
+export function useHeroSlider(count: number) {
   const index = useHeroSliderStore((s) => s.index)
   const setIndex = useHeroSliderStore((s) => s.setIndex)
+  const setCount = useHeroSliderStore((s) => s.setCount)
   const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => setCount(count), [count, setCount])
 
   useEffect(() => {
     // Defer the non-LCP slides to a post-paint tick so they never race the hero.

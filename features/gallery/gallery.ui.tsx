@@ -5,11 +5,12 @@ import { Container, Heading, Lightbox, Section } from '@/components/ui'
 import { cn } from '@/lib/cn'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { useGallery } from './gallery.logic'
+import type { GalleryItem } from './gallery.content'
 
 /** Filterable image grid; clicking a tile opens the lightbox carousel. */
-export function Gallery({ content }: { content: Dictionary['gallery'] }) {
+export function Gallery({ content, images }: { content: Dictionary['gallery']; images: GalleryItem[] }) {
   const { filter, items, sources, lightbox, setFilter, openLightbox, closeLightbox, next, prev } =
-    useGallery()
+    useGallery(images)
   const filters = [{ slug: '*', name: content.all }, ...content.categories]
 
   return (

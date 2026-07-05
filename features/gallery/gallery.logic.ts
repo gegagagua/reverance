@@ -1,9 +1,9 @@
 import { useCallback, useMemo } from 'react'
 import { useGalleryStore } from './gallery.state'
-import { GALLERY_ITEMS } from './gallery.content'
+import type { GalleryItem } from './gallery.content'
 
 /** Derives the visible set from the filter and exposes lightbox navigation. */
-export function useGallery() {
+export function useGallery(all: GalleryItem[]) {
   const filter = useGalleryStore((s) => s.filter)
   const lightbox = useGalleryStore((s) => s.lightbox)
   const setFilter = useGalleryStore((s) => s.setFilter)
@@ -12,8 +12,8 @@ export function useGallery() {
   const setLightbox = useGalleryStore((s) => s.setLightbox)
 
   const items = useMemo(
-    () => (filter === '*' ? GALLERY_ITEMS : GALLERY_ITEMS.filter((item) => item.category === filter)),
-    [filter]
+    () => (filter === '*' ? all : all.filter((item) => item.category === filter)),
+    [filter, all]
   )
   const sources = useMemo(() => items.map((item) => item.src), [items])
 

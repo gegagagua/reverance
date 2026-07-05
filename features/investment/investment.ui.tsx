@@ -1,14 +1,13 @@
 import Image from 'next/image'
 import { Card, Container, Heading, Section, Stat, Text } from '@/components/ui'
 import type { Dictionary } from '@/i18n/dictionaries'
-import { INVESTMENT_ICONS } from './investment.content'
 
 /**
  * Server Component. The page's core selling argument: visual stat numbers plus
  * icon cards — no long paragraphs, per the brief. The section CTA is the
  * `CtaBand` placed directly after it in the page.
  */
-export function Investment({ content }: { content: Dictionary['investment'] }) {
+export function Investment({ content, icons }: { content: Dictionary['investment']; icons: string[] }) {
   return (
     <Section id="investment">
       <Container className="flex flex-col gap-12">
@@ -29,7 +28,7 @@ export function Investment({ content }: { content: Dictionary['investment'] }) {
             <li key={reason.title}>
               <Card tone="muted" className="flex h-full flex-col gap-3">
                 <Image
-                  src={INVESTMENT_ICONS[index] ?? INVESTMENT_ICONS[0] ?? ''}
+                  src={icons[index] ?? icons[0] ?? ''}
                   alt=""
                   width={48}
                   height={48}

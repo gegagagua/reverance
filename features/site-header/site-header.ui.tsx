@@ -4,13 +4,15 @@ import Image from 'next/image'
 import { Container, buttonClass } from '@/components/ui'
 import { cn } from '@/lib/cn'
 import { LocaleSwitcher } from '@/features/locale-switcher'
+import { useOpenRequestCall } from '@/features/request-call'
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { useHeader } from './site-header.logic'
 
 /** Transparent over the hero, solid white once scrolled — mirrors the legacy `.smaller` header. */
-export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['nav'] }) {
+export function SiteHeader({ locale, nav, logo }: { locale: Locale; nav: Dictionary['nav']; logo: string }) {
   const { scrolled, mobileOpen, toggleMobile, closeMobile } = useHeader()
+  const openRequestCall = useOpenRequestCall()
   const solid = scrolled || mobileOpen
   const link = solid ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'
 
@@ -29,7 +31,7 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
       >
         <a href="#top" aria-label={nav.brand} onClick={closeMobile} className="flex shrink-0 items-center">
           <Image
-            src="/theme/images/reverancelogo.png"
+            src={logo}
             alt={nav.brand}
             width={200}
             height={56}
@@ -49,8 +51,9 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={openRequestCall}
             className={cn(
               'hidden whitespace-nowrap sm:inline-flex',
               buttonClass({ variant: 'accent', size: 'sm' }),
@@ -58,7 +61,7 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
             )}
           >
             {nav.call}
-          </a>
+          </button>
           <LocaleSwitcher current={locale} label={nav.language} dark={!solid} />
           <button
             type="button"
@@ -87,13 +90,16 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
                 {item.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={closeMobile}
+            <button
+              type="button"
+              onClick={() => {
+                closeMobile()
+                openRequestCall()
+              }}
               className={cn('my-3', buttonClass({ variant: 'accent', size: 'sm' }))}
             >
               {nav.call}
-            </a>
+            </button>
           </Container>
         </nav>
       )}

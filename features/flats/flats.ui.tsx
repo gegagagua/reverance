@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { Container, Heading } from '@/components/ui'
 import { cn } from '@/lib/cn'
 import type { Dictionary } from '@/i18n/dictionaries'
-import { FLAT_IMAGES } from './flats.content'
 import { useFlats } from './flats.logic'
 
 const ARROW =
@@ -12,7 +11,7 @@ const ARROW =
 
 /** One-at-a-time carousel of apartment types: overlaid arrows on desktop,
  * swipe on mobile, with dot indicators below. */
-export function Flats({ content }: { content: Dictionary['flats'] }) {
+export function Flats({ content, images }: { content: Dictionary['flats']; images: string[] }) {
   const { index, setIndex, next, prev, swipeRef } = useFlats(content.items.length)
 
   return (
@@ -30,7 +29,7 @@ export function Flats({ content }: { content: Dictionary['flats'] }) {
               {content.items.map((flat, i) => (
                 <figure key={flat.title} className="relative aspect-square w-full shrink-0">
                   <Image
-                    src={FLAT_IMAGES[i] ?? FLAT_IMAGES[0] ?? ''}
+                    src={images[i] ?? images[0] ?? ''}
                     alt={flat.title}
                     fill
                     className="object-cover"

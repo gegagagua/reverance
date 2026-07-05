@@ -6,7 +6,15 @@ import { SOCIAL_LINKS } from './site-footer.content'
 
 /** Server Component, dark footer: final CTA, brand, contact columns, socials,
  * and the privacy-policy link. The CTA scrolls to the single contact form. */
-export function SiteFooter({ content, locale }: { content: Dictionary['footer']; locale: Locale }) {
+export function SiteFooter({
+  content,
+  locale,
+  logo,
+}: {
+  content: Dictionary['footer']
+  locale: Locale
+  logo: string
+}) {
   const columns: { label: string; value: string; href?: string }[] = [
     { label: content.callUs, value: content.phone, href: `tel:${content.phone.replace(/\s+/g, '')}` },
     { label: content.hours, value: content.hoursTime },
@@ -22,13 +30,7 @@ export function SiteFooter({ content, locale }: { content: Dictionary['footer'];
         <a href="#contact" data-cta="footer" className={buttonClass({ variant: 'accent', size: 'lg' })}>
           {content.ctaButton}
         </a>
-        <Image
-          src="/theme/images/logo-vertical.png"
-          alt={content.address}
-          width={200}
-          height={120}
-          className="mt-4 h-20 w-auto"
-        />
+        <Image src={logo} alt={content.address} width={200} height={120} className="mt-4 h-20 w-auto" />
         <p className="text-white/70">{content.address}</p>
         <dl className="grid w-full gap-8 sm:grid-cols-3">
           {columns.map((col) => (

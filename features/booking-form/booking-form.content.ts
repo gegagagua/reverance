@@ -1,3 +1,8 @@
+/** Shared form field styling (Tailwind utility strings, reused across the split UI). */
+export const SELECT_CLASS =
+  'h-11 w-full rounded-full border border-foreground/15 bg-transparent px-5 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30'
+export const LABEL_CLASS = 'text-sm font-medium text-foreground/70'
+
 /** Phone country codes for the booking form (trimmed from the legacy list). */
 export const COUNTRY_CODES = [
   { code: '+995', label: '🇬🇪 +995' },

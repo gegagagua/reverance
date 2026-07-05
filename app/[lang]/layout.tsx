@@ -4,7 +4,7 @@ import { Jost, DM_Sans } from 'next/font/google'
 import { isLocale, locales } from '@/i18n/config'
 import { getDictionary } from '@/i18n/dictionaries'
 import { Analytics, AnalyticsNoScript } from '@/features/analytics'
-import './globals.css'
+import '../globals.css'
 
 // Exact theme fonts: Jost (headings, only 400 is used) + DM Sans (body, 400/500).
 // `display: swap` keeps text visible during font load so it never blocks FCP/LCP.
