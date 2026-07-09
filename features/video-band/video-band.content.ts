@@ -1,6 +1,6 @@
 export const VIDEO = {
   youtubeId: '_-PpeyIos8Q',
-  image: '/theme/images/background/2.webp',
+  image: '/theme/images/gallery/g8.webp',
 } as const
 
 /** Privacy-friendly embed that autoplays once the facade is clicked. */

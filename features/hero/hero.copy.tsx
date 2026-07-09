@@ -1,8 +1,9 @@
 'use client'
 
-import { Container, Heading, Text, buttonClass } from '@/components/ui'
+import { Container, Heading, Text } from '@/components/ui'
 import { cn } from '@/lib/cn'
 import type { Dictionary } from '@/i18n/dictionaries'
+import { RequestCallButton } from '@/features/request-call'
 import { useHeroCopyVisible } from './hero.logic'
 
 /** Hero overlay copy + CTA. Faded out on the first slide (image-only intro). */
@@ -27,13 +28,9 @@ export function HeroCopy({ content }: { content: Dictionary['hero'] }) {
           <li className="rounded-full border border-white/25 px-4 py-1.5">{content.location}</li>
           <li className="rounded-full border border-white/25 px-4 py-1.5">{content.completion}</li>
         </ul>
-        <a
-          href="#contact"
-          data-cta="hero"
-          className={cn('mt-2 w-fit', buttonClass({ variant: 'accent', size: 'lg' }))}
-        >
+        <RequestCallButton variant="accent" size="lg" data-cta="hero" className="mt-2 w-fit">
           {content.cta}
-        </a>
+        </RequestCallButton>
       </div>
     </Container>
   )

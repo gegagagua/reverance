@@ -1,11 +1,12 @@
 import Image from 'next/image'
-import { Container, Heading, buttonClass } from '@/components/ui'
+import { Container, Heading } from '@/components/ui'
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
+import { RequestCallButton } from '@/features/request-call'
 import { SOCIAL_LINKS } from './site-footer.content'
 
 /** Server Component, dark footer: final CTA, brand, contact columns, socials,
- * and the privacy-policy link. The CTA scrolls to the single contact form. */
+ * and the privacy-policy link. The CTA opens the "Request a Call" modal. */
 export function SiteFooter({
   content,
   locale,
@@ -27,9 +28,9 @@ export function SiteFooter({
         <Heading as="h2" size="lg" className="max-w-xl text-white">
           {content.ctaTitle}
         </Heading>
-        <a href="#contact" data-cta="footer" className={buttonClass({ variant: 'accent', size: 'lg' })}>
+        <RequestCallButton variant="accent" size="lg" data-cta="footer">
           {content.ctaButton}
-        </a>
+        </RequestCallButton>
         <Image src={logo} alt={content.address} width={200} height={120} className="mt-4 h-20 w-auto" />
         <p className="text-white/70">{content.address}</p>
         <dl className="grid w-full gap-8 sm:grid-cols-3">

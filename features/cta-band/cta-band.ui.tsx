@@ -1,6 +1,7 @@
 'use client'
 
-import { Container, Heading, buttonClass } from '@/components/ui'
+import { Container, Heading } from '@/components/ui'
+import { RequestCallButton } from '@/features/request-call'
 import { track } from '@/lib/track'
 
 interface CtaContent {
@@ -11,7 +12,7 @@ interface CtaContent {
 /**
  * High-contrast CTA band reused at each decision point (after Investment,
  * Apartments, Location). Client leaf so the button click fires a `cta_click`
- * conversion event; the link itself scrolls to the single contact form.
+ * conversion event and opens the shared "Request a Call" modal.
  */
 export function CtaBand({ content, source }: { content: CtaContent; source: string }) {
   return (
@@ -20,13 +21,9 @@ export function CtaBand({ content, source }: { content: CtaContent; source: stri
         <Heading as="h3" size="lg" className="max-w-2xl text-white">
           {content.title}
         </Heading>
-        <a
-          href="#contact"
-          onClick={() => track('cta_click', { source })}
-          className={buttonClass({ variant: 'accent', size: 'lg' })}
-        >
+        <RequestCallButton variant="accent" size="lg" onClick={() => track('cta_click', { source })}>
           {content.button}
-        </a>
+        </RequestCallButton>
       </Container>
     </section>
   )
