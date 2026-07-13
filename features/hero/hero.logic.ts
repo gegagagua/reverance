@@ -6,3 +6,8 @@ import { useHeroSliderStore } from '@/features/hero-slider/hero-slider.state'
 export function useHeroCopyVisible() {
   return useHeroSliderStore((s) => s.index !== 0)
 }
+
+/** The embedded lead form is shown only on the first slide. */
+export function useHeroFormVisible() {
+  return useHeroSliderStore((s) => s.index === 0)
+}

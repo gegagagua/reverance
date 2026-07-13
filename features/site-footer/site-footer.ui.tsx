@@ -31,7 +31,14 @@ export function SiteFooter({
         <RequestCallButton variant="accent" size="lg" data-cta="footer">
           {content.ctaButton}
         </RequestCallButton>
-        <Image src={logo} alt={content.address} width={200} height={120} className="mt-4 h-20 w-auto" />
+        <Image
+          src={logo}
+          alt={content.address}
+          width={200}
+          height={120}
+          sizes="133px"
+          className="mt-4 h-20 w-auto"
+        />
         <p className="text-white/70">{content.address}</p>
         <dl className="grid w-full gap-8 sm:grid-cols-3">
           {columns.map((col) => (

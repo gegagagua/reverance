@@ -30,7 +30,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <>
       <SiteHeader locale={lang} nav={dict.nav} logo={images.logos.header} />
       <main>
-        <Hero content={dict.hero} slides={images.heroSlides} />
+        <Hero content={dict.hero} contact={dict.contact} locale={lang} slides={images.heroSlides} />
         <Floorplan content={dict.floorplan} images={images.floorplanImages} />
         <Overview content={dict.overview} />
         <Investment content={dict.investment} icons={images.investmentIcons} />

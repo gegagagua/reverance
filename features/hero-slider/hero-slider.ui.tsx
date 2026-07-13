@@ -25,6 +25,7 @@ export function HeroSlider({ slides }: { slides: string[] }) {
             fetchPriority={i === 0 ? 'high' : 'auto'}
             loading={i === 0 ? 'eager' : 'lazy'}
             sizes="100vw"
+            quality={65}
             className={cn(
               'object-cover transition-opacity duration-1000',
               i === index ? 'opacity-100' : 'opacity-0'

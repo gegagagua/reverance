@@ -1,20 +1,33 @@
+import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { HeroSlider } from '@/features/hero-slider'
 import { HeroCopy } from './hero.copy'
+import { HeroForm } from './hero.form'
 import { HeroShell } from './hero.shell'
 
 /**
  * Server Component. The 5-second answer: H1 investment message, location +
- * completion badges, and the single primary CTA (the form lives only in the
- * Contact section, so this CTA is not a duplicated form). The copy is hidden on
- * the first slide (see HeroCopy) so the hero opens on the image alone.
+ * completion badges, and the single primary CTA. The first slide swaps the copy
+ * for the embedded lead form (see HeroForm); slides 2+ show the copy + CTA (see
+ * HeroCopy). Only one is visible at a time, keyed off the active slide index.
  */
-export function Hero({ content, slides }: { content: Dictionary['hero']; slides: string[] }) {
+export function Hero({
+  content,
+  contact,
+  locale,
+  slides,
+}: {
+  content: Dictionary['hero']
+  contact: Dictionary['contact']
+  locale: Locale
+  slides: string[]
+}) {
   return (
     <HeroShell>
       <HeroSlider slides={slides} />
       <div className="pointer-events-none absolute inset-0 bg-black/45" />
       <HeroCopy content={content} />
+      <HeroForm content={contact} locale={locale} />
     </HeroShell>
   )
 }

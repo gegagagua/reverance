@@ -35,6 +35,7 @@ export function SiteHeader({ locale, nav, logo }: { locale: Locale; nav: Diction
             alt={nav.brand}
             width={200}
             height={56}
+            sizes="(min-width: 640px) 171px, 120px"
             priority
             className={cn('w-auto', scrolled ? 'h-7 sm:h-9' : 'h-8 sm:h-12', !solid && 'brightness-0 invert')}
           />
