@@ -1,5 +1,5 @@
 import type { Dictionary } from '@/i18n/dictionaries'
-import { VideoPlayer } from './video-band.player'
+import { VideoPlayerLazy } from './video-band.lazy'
 
 /** Server Component, full-bleed dark band that plays the YouTube tour inline. */
 export function VideoBand({
@@ -12,7 +12,7 @@ export function VideoBand({
   return (
     <section aria-label={content.label} className="bg-surface">
       <div className="relative aspect-[21/9] w-full overflow-hidden">
-        <VideoPlayer label={content.label} video={video} />
+        <VideoPlayerLazy label={content.label} video={video} />
       </div>
     </section>
   )

@@ -8,15 +8,15 @@ import { Floorplan } from '@/features/floorplan'
 import { Overview } from '@/features/overview'
 import { Investment } from '@/features/investment'
 import { CtaBand } from '@/features/cta-band'
-import { Gallery } from '@/features/gallery'
-import { Flats } from '@/features/flats'
+import { GalleryLazy } from '@/features/gallery/gallery.lazy'
+import { FlatsLazy } from '@/features/flats/flats.lazy'
 import { Location } from '@/features/location'
 import { Faq } from '@/features/faq'
 import { Contact } from '@/features/contact'
 import { VideoBand } from '@/features/video-band'
 import { SiteFooter } from '@/features/site-footer'
-import { MobileDock } from '@/features/mobile-dock'
-import { RequestCallModal } from '@/features/request-call'
+import { MobileDockLazy } from '@/features/mobile-dock/mobile-dock.lazy'
+import { RequestCallModalLazy } from '@/features/request-call/request-call.lazy'
 
 /** Server Component. Loads the locale dictionary and composes the single page in
  * the brief's order, with CTAs at each decision point (Hero → Investment →
@@ -35,8 +35,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <Overview content={dict.overview} />
         <Investment content={dict.investment} icons={images.investmentIcons} />
         <CtaBand content={dict.investment.cta} source="investment" />
-        <Gallery content={dict.gallery} images={images.galleryItems} />
-        <Flats content={dict.flats} images={images.flatImages} />
+        <GalleryLazy content={dict.gallery} images={images.galleryItems} />
+        <FlatsLazy content={dict.flats} images={images.flatImages} />
         <CtaBand content={dict.cta.apartments} source="apartments" />
         <Location content={dict.location} />
         <CtaBand content={dict.cta.location} source="location" />
@@ -45,8 +45,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <VideoBand content={dict.video} video={images.video} />
       </main>
       <SiteFooter content={dict.footer} locale={lang} logo={images.logos.footer} />
-      <MobileDock content={dict.mobileDock} />
-      <RequestCallModal content={dict.contact} locale={lang} />
+      <MobileDockLazy content={dict.mobileDock} />
+      <RequestCallModalLazy content={dict.contact} locale={lang} />
     </>
   )
 }

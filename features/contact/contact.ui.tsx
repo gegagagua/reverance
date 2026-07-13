@@ -1,7 +1,7 @@
 import { Container, Heading, Section, Text } from '@/components/ui'
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
-import { BookingForm } from '@/features/booking-form'
+import { BookingFormLazy } from '@/features/booking-form/booking-form.lazy'
 
 /**
  * Server Component, light band. The single conversion point: lead form beside a
@@ -32,7 +32,7 @@ export function Contact({ content, locale }: { content: Dictionary['contact']; l
             ))}
           </dl>
         </div>
-        <BookingForm content={content} locale={locale} />
+        <BookingFormLazy content={content} locale={locale} />
       </Container>
     </Section>
   )

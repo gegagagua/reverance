@@ -1,6 +1,7 @@
 import { Container, Heading, Section, Text } from '@/components/ui'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { MAP_SRC } from './location.content'
+import { LocationMap } from './location.map'
 
 /** Server Component. Batumi positioning: highlight cards, two addresses
  * (construction site + sales office), and a lazy-loaded map embed. */
@@ -40,13 +41,7 @@ export function Location({ content }: { content: Dictionary['location'] }) {
             </div>
           ))}
         </div>
-        <iframe
-          src={MAP_SRC}
-          title={content.mapTitle}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="aspect-[16/9] w-full rounded-2xl border border-foreground/10"
-        />
+        <LocationMap src={MAP_SRC} title={content.mapTitle} />
       </Container>
     </Section>
   )
