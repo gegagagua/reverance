@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin-login
 
-Sitemap: https://www.reverance.ge/sitemap.xml
+Sitemap: https://reverance.ge/sitemap.xml

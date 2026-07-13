@@ -4,57 +4,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Home -->
   <url>
-    <loc>https://www.reverance.ge/en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reverance.ge/en" />
-    <xhtml:link rel="alternate" hreflang="ka" href="https://www.reverance.ge/ka" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.reverance.ge/ru" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reverance.ge/en" />
+    <loc>https://reverance.ge/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reverance.ge/en" />
+    <xhtml:link rel="alternate" hreflang="ka" href="https://reverance.ge/ka" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://reverance.ge/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reverance.ge/en" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.reverance.ge/ka</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reverance.ge/en" />
-    <xhtml:link rel="alternate" hreflang="ka" href="https://www.reverance.ge/ka" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.reverance.ge/ru" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reverance.ge/en" />
+    <loc>https://reverance.ge/ka</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reverance.ge/en" />
+    <xhtml:link rel="alternate" hreflang="ka" href="https://reverance.ge/ka" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://reverance.ge/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reverance.ge/en" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.reverance.ge/ru</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reverance.ge/en" />
-    <xhtml:link rel="alternate" hreflang="ka" href="https://www.reverance.ge/ka" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.reverance.ge/ru" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reverance.ge/en" />
+    <loc>https://reverance.ge/ru</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reverance.ge/en" />
+    <xhtml:link rel="alternate" hreflang="ka" href="https://reverance.ge/ka" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://reverance.ge/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reverance.ge/en" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Privacy policy -->
   <url>
-    <loc>https://www.reverance.ge/en/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reverance.ge/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="ka" href="https://www.reverance.ge/ka/privacy" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.reverance.ge/ru/privacy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reverance.ge/en/privacy" />
+    <loc>https://reverance.ge/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reverance.ge/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="ka" href="https://reverance.ge/ka/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://reverance.ge/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reverance.ge/en/privacy" />
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.reverance.ge/ka/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reverance.ge/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="ka" href="https://www.reverance.ge/ka/privacy" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.reverance.ge/ru/privacy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reverance.ge/en/privacy" />
+    <loc>https://reverance.ge/ka/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reverance.ge/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="ka" href="https://reverance.ge/ka/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://reverance.ge/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reverance.ge/en/privacy" />
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.reverance.ge/ru/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reverance.ge/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="ka" href="https://www.reverance.ge/ka/privacy" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.reverance.ge/ru/privacy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reverance.ge/en/privacy" />
+    <loc>https://reverance.ge/ru/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reverance.ge/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="ka" href="https://reverance.ge/ka/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://reverance.ge/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reverance.ge/en/privacy" />
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
