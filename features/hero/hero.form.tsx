@@ -5,15 +5,19 @@ import { cn } from '@/lib/cn'
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { BookingForm } from '@/features/booking-form'
+import { useHeroSliderPause } from '@/features/hero-slider'
 import { useHeroFormVisible } from './hero.logic'
 
 /** Lead form embedded in the hero, shown only on the first slide. Reuses the
- *  contact section's form so visitors can convert without scrolling. */
+ *  contact section's form so visitors can convert without scrolling. Hovering or
+ *  focusing the card pauses the hero auto-advance so it can't slide out mid-entry. */
 export function HeroForm({ content, locale }: { content: Dictionary['contact']; locale: Locale }) {
   const visible = useHeroFormVisible()
+  const pause = useHeroSliderPause()
 
   return (
     <div
+      {...pause}
       aria-hidden={!visible}
       className={cn(
         'absolute inset-0 z-10 flex items-center transition-opacity duration-700',

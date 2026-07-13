@@ -2,8 +2,8 @@ import type { HTMLAttributes } from 'react'
 import { cn } from '@/lib/cn'
 
 const tones = {
-  light: 'border-foreground/10 bg-background',
-  muted: 'border-foreground/10 bg-foreground/[0.02]',
+  light: 'border-foreground/10 bg-background text-foreground',
+  muted: 'border-foreground/10 bg-foreground/[0.02] text-foreground',
   dark: 'border-white/10 bg-white/[0.04] text-white',
 } as const
 
