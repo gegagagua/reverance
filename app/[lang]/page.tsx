@@ -2,15 +2,23 @@ import { notFound } from 'next/navigation'
 import { isLocale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/dictionaries'
 import { getImages } from '@/lib/content/read'
+import { StructuredData } from '@/features/structured-data'
 import { SiteHeader } from '@/features/site-header'
 import { Hero } from '@/features/hero'
+import { LeadForm } from '@/features/lead-form'
 import { Floorplan } from '@/features/floorplan'
+import { About } from '@/features/about'
 import { Overview } from '@/features/overview'
 import { Investment } from '@/features/investment'
+import { Roi } from '@/features/roi'
 import { CtaBand } from '@/features/cta-band'
 import { GalleryLazy } from '@/features/gallery/gallery.lazy'
+import { Progress } from '@/features/progress'
 import { FlatsLazy } from '@/features/flats/flats.lazy'
+import { Process } from '@/features/process'
+import { LocationAdvantages } from '@/features/location-advantages'
 import { Location } from '@/features/location'
+import { Testimonials } from '@/features/testimonials'
 import { Faq } from '@/features/faq'
 import { Contact } from '@/features/contact'
 import { VideoBand } from '@/features/video-band'
@@ -28,18 +36,26 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   return (
     <>
+      <StructuredData locale={lang} dict={dict} />
       <SiteHeader locale={lang} nav={dict.nav} logo={images.logos.header} />
       <main>
         <Hero content={dict.hero} contact={dict.contact} locale={lang} slides={images.heroSlides} />
+        <LeadForm content={dict.leadForm} locale={lang} />
+        <About content={dict.about} />
         <Floorplan content={dict.floorplan} images={images.floorplanImages} />
         <Overview content={dict.overview} />
         <Investment content={dict.investment} icons={images.investmentIcons} />
+        <Roi content={dict.roi} />
         <CtaBand content={dict.investment.cta} source="investment" />
         <GalleryLazy content={dict.gallery} images={images.galleryItems} />
+        <Progress content={dict.progress} />
         <FlatsLazy content={dict.flats} images={images.flatImages} />
+        <Process content={dict.process} />
         <CtaBand content={dict.cta.apartments} source="apartments" />
+        <LocationAdvantages content={dict.locationAdvantages} />
         <Location content={dict.location} />
         <CtaBand content={dict.cta.location} source="location" />
+        <Testimonials content={dict.testimonials} />
         <Faq content={dict.faq} />
         <Contact content={dict.contact} locale={lang} />
         <VideoBand content={dict.video} video={images.video} />

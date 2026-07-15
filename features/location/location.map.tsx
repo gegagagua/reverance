@@ -1,22 +1,23 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { Defer } from '@/components/ui'
+import type { MapMarker } from './location.logic'
+
+// ssr:false + Defer: the Leaflet loader chunk is fetched only once the section
+// nears the viewport, never at first paint. The type-only import above is erased,
+// so location.logic stays out of the initial bundle.
+const MapCanvas = dynamic(() => import('./location.canvas').then((m) => m.MapCanvas), { ssr: false })
 
 /**
- * The Google Maps embed only mounts once the location section nears the viewport,
- * so its third-party requests never compete with the initial mobile load. The
- * `aspect` wrapper reserves the exact space, so mounting causes no layout shift.
+ * Lazy, keyless Leaflet map with two brand-coloured pins (navy = project,
+ * bronze = sales office). The `aspect` wrapper reserves the exact space, so
+ * mounting the map causes no layout shift.
  */
-export function LocationMap({ src, title }: { src: string; title: string }) {
+export function LocationMap({ markers, title }: { markers: MapMarker[]; title: string }) {
   return (
     <Defer className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-foreground/10">
-      <iframe
-        src={src}
-        title={title}
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        className="h-full w-full"
-      />
+      <MapCanvas markers={markers} title={title} />
     </Defer>
   )
 }

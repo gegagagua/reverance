@@ -5,6 +5,7 @@ import { Container, Heading } from '@/components/ui'
 import { cn } from '@/lib/cn'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { useFlats } from './flats.logic'
+import { FlatDetails } from './flats.details'
 
 const ARROW =
   'absolute top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/10 bg-white text-2xl leading-none text-foreground shadow-md transition-colors hover:bg-foreground/5 md:flex'
@@ -13,6 +14,7 @@ const ARROW =
  * swipe on mobile, with dot indicators below. */
 export function Flats({ content, images }: { content: Dictionary['flats']; images: string[] }) {
   const { index, setIndex, next, prev, swipeRef } = useFlats(content.items.length)
+  const activeFlat = content.items[index] ?? content.items[0]
 
   return (
     <section id="flats" className="py-24 sm:py-28">
@@ -77,6 +79,7 @@ export function Flats({ content, images }: { content: Dictionary['flats']; image
             />
           ))}
         </div>
+        {activeFlat && <FlatDetails flat={activeFlat} labels={content.specLabels} />}
       </Container>
     </section>
   )

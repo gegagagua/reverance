@@ -10,6 +10,8 @@ interface BookingFields {
   apartment: string
   channel: string
   time: string
+  /** CTA / section that opened this form — recorded with the lead (item #4). */
+  source: string
 }
 
 interface BookingState extends BookingFields {
@@ -26,6 +28,7 @@ export const useBookingStore = create<BookingState>((set) => ({
   apartment: '',
   channel: '',
   time: '',
+  source: '',
   status: 'idle',
   update: (patch) => set({ ...patch, status: 'idle' }),
   setStatus: (status) => set({ status }),

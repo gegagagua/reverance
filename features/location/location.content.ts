@@ -1,3 +1,15 @@
-/** Lazy Google Maps embed centred on Batumi — keyless share URL, so no API key
- * or extra dependency is required. Swap `q` for precise project coordinates. */
-export const MAP_SRC = 'https://www.google.com/maps?q=Batumi,Georgia&z=13&output=embed'
+/** Precise pin coordinates for the two Batumi addresses, resolved from the
+ * shared Google Maps links. Labels come from the localized dictionary at render
+ * time; `url` opens the original Google Maps place from the popup. */
+export const MAP_MARKERS = {
+  project: {
+    lat: 41.6172908,
+    lng: 41.598081,
+    url: 'https://maps.app.goo.gl/AkRFiBg4K2y6Fpi78',
+  },
+  sales: {
+    lat: 41.6325669,
+    lng: 41.6136097,
+    url: 'https://maps.app.goo.gl/qNqaxhi9F5vd97sc8',
+  },
+} as const

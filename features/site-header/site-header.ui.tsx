@@ -54,7 +54,7 @@ export function SiteHeader({ locale, nav, logo }: { locale: Locale; nav: Diction
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={openRequestCall}
+            onClick={() => openRequestCall()}
             className={cn(
               'hidden whitespace-nowrap sm:inline-flex',
               buttonClass({ variant: 'accent', size: 'sm' }),

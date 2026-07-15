@@ -2,6 +2,7 @@ import { useCallback, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Locale } from '@/i18n/config'
 import { track } from '@/lib/track'
+import { getUtm } from '@/lib/utm'
 import { useBookingStore } from './booking-form.state'
 
 /**
@@ -19,6 +20,7 @@ export function useBookingForm(locale: Locale) {
   const apartment = useBookingStore((s) => s.apartment)
   const channel = useBookingStore((s) => s.channel)
   const time = useBookingStore((s) => s.time)
+  const source = useBookingStore((s) => s.source)
   const status = useBookingStore((s) => s.status)
   const update = useBookingStore((s) => s.update)
   const setStatus = useBookingStore((s) => s.setStatus)
@@ -39,18 +41,19 @@ export function useBookingForm(locale: Locale) {
             name: name.trim(),
             phone: `${countryCode}${phone.trim()}`,
             project: '4969',
-            source: 'landing',
+            source: source || 'landing',
             lead_form_submit: 'true',
+            answers: { apartment, channel, time, cta_source: source, ...getUtm() },
           }),
         })
         if (!res.ok) throw new Error('CRM submission failed')
-        track('form_submission', { channel, apartment })
+        track('form_submission', { channel, apartment, source })
         router.push(`/${locale}/thank-you`)
       } catch {
         setStatus('error')
       }
     },
-    [name, countryCode, phone, channel, apartment, locale, router, setStatus]
+    [name, countryCode, phone, channel, time, apartment, source, locale, router, setStatus]
   )
 
   return { name, countryCode, phone, email, apartment, channel, time, status, update, submit }

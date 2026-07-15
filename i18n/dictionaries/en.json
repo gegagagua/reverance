@@ -24,6 +24,226 @@
     "completion": "Delivery 2026",
     "cta": "Request a Call"
   },
+  "process": {
+    "eyebrow": "How it works",
+    "heading": "From choice to passive income — in clear steps.",
+    "subtitle": "Every stage is transparent, so you always know what happens next — from picking a layout to handing the keys to our rental team.",
+    "steps": [
+      {
+        "title": "Choose your apartment",
+        "description": "Pick a layout that fits your goal — rental yield, resale, or personal use — with our sales team's guidance."
+      },
+      {
+        "title": "Reserve & sign",
+        "description": "Secure your unit with a reservation and a transparent purchase agreement. Foreigners buy freehold, with no residency required."
+      },
+      {
+        "title": "Flexible payment plan",
+        "description": "Spread payments over an interest-free schedule tied to construction milestones, up to completion."
+      },
+      {
+        "title": "Construction & progress updates",
+        "description": "Follow building progress with regular dated updates until delivery in 2026."
+      },
+      {
+        "title": "Handover & finishing",
+        "description": "Receive your apartment finished to international standards, ready to furnish and rent."
+      },
+      {
+        "title": "Rental-management onboarding",
+        "description": "Hand the keys to Otium's management team — bookings, guests, cleaning and payouts — and start earning passively."
+      }
+    ]
+  },
+  "leadForm": {
+    "eyebrow": "Quick request",
+    "heading": "Get pricing & the full ROI model",
+    "subtitle": "Leave your details and our team replies within one business day.",
+    "name": "Name",
+    "phone": "Phone / WhatsApp",
+    "apartment": "Apartment of interest",
+    "apartmentOptions": ["Studio", "1BR", "2BR", "Not sure"],
+    "submit": "Get the offer",
+    "sending": "Sending…",
+    "error": "Please check your name and phone and try again."
+  },
+  "about": {
+    "eyebrow": "About Otium",
+    "heading": "A developer defined by trust and detail.",
+    "body": [
+      "Otium Development is a Batumi-based developer building premium residential projects where architecture, comfort, and long-term value meet. Every detail — from planning to finishing — is guided by international standards.",
+      "Our focus is the investor and the resident alike: durable construction, a transparent process, and full property management that turns a purchase into dependable income."
+    ],
+    "stats": [
+      { "value": "10+", "label": "Years of experience" },
+      { "value": "1,500+", "label": "Happy owners" },
+      { "value": "8", "label": "Delivered projects" },
+      { "value": "100%", "label": "On-time delivery" }
+    ]
+  },
+  "roi": {
+    "eyebrow": "ROI explained",
+    "heading": "How the expected return is calculated.",
+    "subtitle": "Transparent assumptions on a sample studio, so the projected yield is something you can check — not just a number on a banner.",
+    "assumptionsLabel": "Assumptions · sample Studio",
+    "assumptions": [
+      { "label": "Example apartment price", "value": "$57,000" },
+      { "label": "Average nightly rate", "value": "$55" },
+      { "label": "Estimated monthly rental income", "value": "$1,000 – $1,200" },
+      { "label": "Expected occupancy", "value": "60 – 70%" },
+      { "label": "Management fee", "value": "20% of rental income" },
+      { "label": "Annual maintenance & fees", "value": "≈ $600" }
+    ],
+    "scenariosLabel": "Estimated yearly net return",
+    "scenarios": [
+      { "name": "Conservative", "detail": "55% occupancy", "net": "≈ 10%" },
+      { "name": "Average", "detail": "65% occupancy", "net": "≈ 13%" },
+      { "name": "Optimistic", "detail": "75% occupancy", "net": "≈ 15%" }
+    ],
+    "disclaimer": "Illustrative estimates based on current Batumi market rates; actual returns vary. The full model is available on request."
+  },
+  "progress": {
+    "eyebrow": "Construction progress",
+    "heading": "Watch Reverance rise.",
+    "subtitle": "Dated milestones from groundwork to delivery, updated as the project advances.",
+    "stages": [
+      {
+        "date": "Q1 2025",
+        "title": "Foundation & groundworks",
+        "description": "Excavation and foundation completed on schedule.",
+        "status": "Completed"
+      },
+      {
+        "date": "Q3 2025",
+        "title": "Structural frame",
+        "description": "Reinforced-concrete frame topped out across all floors.",
+        "status": "Completed"
+      },
+      {
+        "date": "Q2 2026",
+        "title": "Facade & envelope",
+        "description": "Curtain-wall glazing and exterior finishing underway.",
+        "status": "In progress"
+      },
+      {
+        "date": "Q4 2026",
+        "title": "Finishing & handover",
+        "description": "Interior finishing, landscaping and key handover.",
+        "status": "Planned"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "heading": "Investors who already trust Otium.",
+    "items": [
+      {
+        "quote": "The process was transparent from day one, and the rental team handles everything — my studio pays for itself.",
+        "name": "David M.",
+        "role": "Investor · United Kingdom",
+        "rating": 5
+      },
+      {
+        "quote": "I bought remotely as a foreigner and it was simpler than expected. Payouts arrive on time every month.",
+        "name": "Anna K.",
+        "role": "Investor · Germany",
+        "rating": 5
+      },
+      {
+        "quote": "Quality of construction and communication is a level above what I've seen elsewhere in Batumi.",
+        "name": "Levan T.",
+        "role": "Investor · Georgia",
+        "rating": 5
+      }
+    ]
+  },
+  "locationAdvantages": {
+    "eyebrow": "Why this location",
+    "heading": "Address is half the return.",
+    "subtitle": "In Batumi, location drives occupancy and nightly rates — here's what puts Reverance ahead.",
+    "items": [
+      {
+        "icon": "🏖️",
+        "title": "750 m from the sea",
+        "description": "Walkable beach access keeps summer occupancy and nightly rates high."
+      },
+      {
+        "icon": "✈️",
+        "title": "5 min to the airport",
+        "description": "Short transfers convert more international, higher-paying bookings."
+      },
+      {
+        "icon": "🌴",
+        "title": "Beside New Boulevard",
+        "description": "The city's prime leisure strip — a magnet for tourists year-round."
+      },
+      {
+        "icon": "🍽️",
+        "title": "Restaurants & cafés",
+        "description": "Walk-out dining and nightlife raise guest reviews and repeat stays."
+      },
+      {
+        "icon": "📈",
+        "title": "High-growth district",
+        "description": "One of Batumi's fastest-appreciating areas, supporting resale value."
+      },
+      {
+        "icon": "🌇",
+        "title": "Sea & city views",
+        "description": "View-facing units command premium nightly rates."
+      }
+    ]
+  },
+  "landings": {
+    "invest-in-batumi-real-estate": {
+      "title": "Invest in Batumi Real Estate | Reverance by Otium",
+      "description": "Invest in Batumi real estate with 12–15% expected ROI, a sea-side location and full rental management. Premium apartments by Otium, delivery 2026.",
+      "keywords": "invest in batumi real estate, batumi real estate investment, invest in georgia",
+      "eyebrow": "Invest in Batumi",
+      "h1": "Invest in Batumi real estate with 12–15% expected ROI.",
+      "intro": "Reverance by Otium is a premium sea-side residence in Batumi, built for investors: strong rental demand, transparent numbers and full property management that keeps your return passive."
+    },
+    "apartments-for-sale-in-batumi": {
+      "title": "Apartments for Sale in Batumi | Reverance by Otium",
+      "description": "Studio, 1BR and 2BR apartments for sale in Batumi from $54,000 — sea-side location, flexible payment plans and full rental management. Delivery 2026.",
+      "keywords": "apartments for sale in batumi, buy apartment batumi, batumi property for sale",
+      "eyebrow": "Apartments for sale",
+      "h1": "Apartments for sale in Batumi, from $54,000.",
+      "intro": "Choose from studios, one- and two-bedroom apartments in a premium sea-side residence, with flexible interest-free payment plans and a rental-management service that turns your apartment into income."
+    },
+    "buy-property-in-georgia-foreigners": {
+      "title": "Buy Property in Georgia as a Foreigner | Reverance by Otium",
+      "description": "Foreigners can buy property in Georgia freehold — no residency required, low fees, fast registration. Premium Batumi apartments with 12–15% ROI.",
+      "keywords": "buy property in georgia as a foreigner, foreigner buy property georgia",
+      "eyebrow": "For foreign buyers",
+      "h1": "Buy property in Georgia as a foreigner — simply.",
+      "intro": "Georgia lets foreign nationals own residential property freehold, with no residency requirement and registration costs under 1%. We handle the entire process end to end, remotely if needed."
+    },
+    "batumi-rental-property-roi": {
+      "title": "Batumi Rental Property ROI | Reverance by Otium",
+      "description": "See how Batumi rental property ROI is calculated: nightly rates, occupancy, fees and net yearly return. A transparent 12–15% ROI model by Otium.",
+      "keywords": "batumi rental property roi, batumi rental yield, batumi airbnb roi",
+      "eyebrow": "Rental ROI",
+      "h1": "Batumi rental property ROI, explained transparently.",
+      "intro": "No vague percentages — see the assumptions behind the return: nightly rates, occupancy, management fees and net yearly yield across conservative, average and optimistic scenarios."
+    },
+    "property-management-in-batumi": {
+      "title": "Property Management in Batumi | Reverance by Otium",
+      "description": "Full property management in Batumi: bookings, guest communication, cleaning, maintenance and payouts. Keep your rental return fully passive.",
+      "keywords": "property management in batumi, batumi rental management, airbnb management batumi",
+      "eyebrow": "Property management",
+      "h1": "Property management in Batumi, done for you.",
+      "intro": "Otium's in-house team runs everything — bookings, guests, cleaning, maintenance and monthly payouts — so your apartment earns without demanding your time."
+    },
+    "studio-apartments-in-batumi": {
+      "title": "Studio Apartments in Batumi | Reverance by Otium",
+      "description": "Studio apartments in Batumi from $54,000 — compact, sea-side and high-yield, with ≈13–15% expected ROI and full rental management. Delivery 2026.",
+      "keywords": "studio apartments in batumi, batumi studio for sale, buy studio batumi",
+      "eyebrow": "Studios",
+      "h1": "Studio apartments in Batumi, from $54,000.",
+      "intro": "Compact, efficient and the highest-yielding unit type in the building — our studios are built for short-stay rental demand, with full management included."
+    }
+  },
   "floorplan": {
     "items": [
       {
@@ -40,10 +260,55 @@
     "heading": "Apartments",
     "eyebrow": "Floor plans",
     "priceLabel": "Starting price",
+    "specLabels": {
+      "priceRange": "Price range",
+      "area": "Area",
+      "floors": "Floors",
+      "availability": "Availability",
+      "payment": "Payment plan",
+      "roi": "Estimated ROI",
+      "bestUse": "Best use"
+    },
     "items": [
-      { "title": "Studio", "area": "32.2 m²", "price": "$54,000" },
-      { "title": "One-bedroom apartment", "area": "55 m²", "price": "$89,000" },
-      { "title": "Two-bedroom apartment", "area": "65 m²", "price": "$112,000" }
+      {
+        "title": "Studio",
+        "area": "32.2 m²",
+        "price": "$54,000",
+        "priceRange": "$54,000 – $61,000",
+        "floors": "Floors 4–12",
+        "availability": "Available",
+        "payment": "Up to 24-month interest-free plan",
+        "roi": "≈ 13–15% / year",
+        "bestUse": "Rental yield",
+        "cta": "Send me Studio plans",
+        "leadType": "Studio"
+      },
+      {
+        "title": "One-bedroom apartment",
+        "area": "55 m²",
+        "price": "$89,000",
+        "priceRange": "$89,000 – $104,000",
+        "floors": "Floors 5–15",
+        "availability": "Limited availability",
+        "payment": "Up to 24-month plan",
+        "roi": "≈ 12–14% / year",
+        "bestUse": "Rental yield & resale",
+        "cta": "Check 1BR availability",
+        "leadType": "1BR"
+      },
+      {
+        "title": "Two-bedroom apartment",
+        "area": "65 m²",
+        "price": "$112,000",
+        "priceRange": "$112,000 – $138,000",
+        "floors": "Floors 8–18",
+        "availability": "Available",
+        "payment": "Flexible payment plan",
+        "roi": "≈ 11–13% / year",
+        "bestUse": "Personal use & resale",
+        "cta": "Get 2BR ROI estimate",
+        "leadType": "2BR"
+      }
     ]
   },
   "gallery": {

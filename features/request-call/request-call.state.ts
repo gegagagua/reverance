@@ -1,14 +1,23 @@
 import { create } from 'zustand'
 
+/** Context a CTA can attach when opening the modal, so the lead records which
+ * apartment type and button drove it (see item #4 — per-card CTAs). */
+export interface RequestCallContext {
+  apartment?: string
+  source?: string
+}
+
 interface RequestCallState {
   open: boolean
-  setOpen: (open: boolean) => void
+  context: RequestCallContext
+  setOpen: (open: boolean, context?: RequestCallContext) => void
 }
 
 /** Global open/closed state for the "Request a Call" modal. Kept in a store so
- * any CTA (header, dock, bands) can open it while the modal itself is mounted
- * once with the contact content. */
+ * any CTA (header, dock, bands, apartment cards) can open it while the modal
+ * itself is mounted once with the contact content. */
 export const useRequestCallStore = create<RequestCallState>((set) => ({
   open: false,
-  setOpen: (open) => set({ open }),
+  context: {},
+  setOpen: (open, context = {}) => set({ open, context }),
 }))
