@@ -1,18 +1,12 @@
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
 
-/** One gallery tile: an asset path plus its category slug. */
-export interface GalleryImage {
-  src: string
-  category: string
-}
-
-/** Locale-agnostic media used across the page. Every field is admin-editable. */
+/** Locale-agnostic media used across the page. Every field is admin-editable.
+ * (Gallery images are intentionally excluded — they are hardcoded for speed;
+ * see features/gallery/gallery.content.ts.) */
 export interface SiteImages {
   heroSlides: string[]
-  floorplanImages: string[]
   flatImages: string[]
-  galleryItems: GalleryImage[]
   investmentIcons: string[]
   video: { youtubeId: string; image: string }
   logos: { header: string; footer: string }

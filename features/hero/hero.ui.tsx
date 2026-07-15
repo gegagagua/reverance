@@ -7,9 +7,9 @@ import { HeroShell } from './hero.shell'
 
 /**
  * Server Component. The 5-second answer: H1 investment message, location +
- * completion badges, and the single primary CTA. The first slide swaps the copy
- * for the embedded lead form (see HeroForm); slides 2+ show the copy + CTA (see
- * HeroCopy). Only one is visible at a time, keyed off the active slide index.
+ * completion badges, and the single primary CTA. The first slide shows the copy +
+ * CTA (see HeroCopy); the second slide swaps it for the embedded lead form (see
+ * HeroForm). Only one is visible at a time, keyed off the active slide index.
  */
 export function Hero({
   content,

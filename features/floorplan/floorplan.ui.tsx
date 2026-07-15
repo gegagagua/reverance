@@ -2,9 +2,12 @@ import Image from 'next/image'
 import { Container, Heading, Text } from '@/components/ui'
 import { cn } from '@/lib/cn'
 import type { Dictionary } from '@/i18n/dictionaries'
+import { FLOORPLAN_IMAGES } from './floorplan.content'
 
-/** Server Component, dark band. Alternating image/text rows (investment / Batumi). */
-export function Floorplan({ content, images }: { content: Dictionary['floorplan']; images: string[] }) {
+/** Server Component, dark band. Alternating image/text rows (investment / Batumi).
+ * Images are hardcoded (see floorplan.content) — intentionally not admin-managed. */
+export function Floorplan({ content }: { content: Dictionary['floorplan'] }) {
+  const images = FLOORPLAN_IMAGES
   return (
     <section id="about" className="bg-surface py-24 text-white sm:py-28">
       <Container className="flex flex-col gap-16">

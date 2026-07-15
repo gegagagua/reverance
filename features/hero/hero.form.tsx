@@ -8,7 +8,7 @@ import { BookingForm } from '@/features/booking-form'
 import { useHeroSliderPause } from '@/features/hero-slider'
 import { useHeroFormVisible } from './hero.logic'
 
-/** Lead form embedded in the hero, shown only on the first slide. Reuses the
+/** Lead form embedded in the hero, shown only on the second slide. Reuses the
  *  contact section's form so visitors can convert without scrolling. Hovering or
  *  focusing the card pauses the hero auto-advance so it can't slide out mid-entry. */
 export function HeroForm({ content, locale }: { content: Dictionary['contact']; locale: Locale }) {

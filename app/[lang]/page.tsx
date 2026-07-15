@@ -42,12 +42,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <Hero content={dict.hero} contact={dict.contact} locale={lang} slides={images.heroSlides} />
         <LeadForm content={dict.leadForm} locale={lang} />
         <About content={dict.about} />
-        <Floorplan content={dict.floorplan} images={images.floorplanImages} />
+        <Floorplan content={dict.floorplan} />
         <Overview content={dict.overview} />
         <Investment content={dict.investment} icons={images.investmentIcons} />
         <Roi content={dict.roi} />
         <CtaBand content={dict.investment.cta} source="investment" />
-        <GalleryLazy content={dict.gallery} images={images.galleryItems} />
+        <GalleryLazy content={dict.gallery} />
         <Progress content={dict.progress} />
         <FlatsLazy content={dict.flats} images={images.flatImages} />
         <Process content={dict.process} />

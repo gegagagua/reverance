@@ -2,65 +2,52 @@
 
 import Image from 'next/image'
 import { Container, Heading, Lightbox, Section } from '@/components/ui'
-import { cn } from '@/lib/cn'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { useGallery } from './gallery.logic'
-import type { GalleryItem } from './gallery.content'
 
-/** Filterable image grid; clicking a tile opens the lightbox carousel. */
-export function Gallery({ content, images }: { content: Dictionary['gallery']; images: GalleryItem[] }) {
-  const { filter, items, sources, lightbox, setFilter, openLightbox, closeLightbox, next, prev } =
-    useGallery(images)
-  const filters = [{ slug: '*', name: content.all }, ...content.categories]
+/** Images grouped under a heading per category; clicking a tile opens the
+ * lightbox carousel over the full set. Images are hardcoded (gallery.content). */
+export function Gallery({ content }: { content: Dictionary['gallery'] }) {
+  const { groups, sources, lightbox, openLightbox, closeLightbox, next, prev } = useGallery()
 
   return (
     <Section id="gallery">
-      <Container className="flex flex-col gap-10">
+      <Container className="flex flex-col gap-12">
         <Heading as="h2" size="lg" className="text-center">
           {content.heading}
         </Heading>
-        <div className="flex flex-wrap justify-center gap-2">
-          {filters.map((f) => (
-            <button
-              key={f.slug}
-              type="button"
-              onClick={() => setFilter(f.slug)}
-              className={cn(
-                'rounded-full px-4 py-1.5 text-sm transition-colors',
-                filter === f.slug
-                  ? 'bg-accent text-white'
-                  : 'border border-foreground/15 hover:bg-foreground/5'
-              )}
-            >
-              {f.name}
-            </button>
-          ))}
-        </div>
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {items.map((item, index) => (
-            <li
-              key={`${filter}-${item.src}`}
-              style={{ animationDelay: `${index * 45}ms` }}
-              className="animate-gallery-in"
-            >
-              <button
-                type="button"
-                onClick={() => openLightbox(index)}
-                aria-label={`Open image ${index + 1}`}
-                className="group relative block aspect-square w-full overflow-hidden rounded-xl"
-              >
-                <Image
-                  src={item.src}
-                  alt=""
-                  fill
-                  quality={65}
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
-              </button>
-            </li>
-          ))}
-        </ul>
+        {content.categories.map((category) => {
+          const items = groups[category.slug] ?? []
+          if (items.length === 0) return null
+          return (
+            <div key={category.slug} className="flex flex-col gap-5">
+              <Heading as="h3" size="md">
+                {category.name}
+              </Heading>
+              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                {items.map((item, i) => (
+                  <li key={item.src} style={{ animationDelay: `${i * 45}ms` }} className="animate-gallery-in">
+                    <button
+                      type="button"
+                      onClick={() => openLightbox(item.index)}
+                      aria-label={`Open ${category.name} image ${i + 1}`}
+                      className="group relative block aspect-square w-full overflow-hidden rounded-xl"
+                    >
+                      <Image
+                        src={item.src}
+                        alt=""
+                        fill
+                        quality={65}
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        })}
       </Container>
       <Lightbox images={sources} index={lightbox} onClose={closeLightbox} onPrev={prev} onNext={next} />
     </Section>
