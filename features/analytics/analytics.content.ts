@@ -4,7 +4,8 @@
  * The script bodies are the vendor snippets, kept out of the JSX.
  */
 export const ANALYTICS = {
-  gtmId: process.env.NEXT_PUBLIC_GTM_ID,
+  // Hardcoded so GTM ships on the server without any env config.
+  gtmId: 'GTM-PVPVS2R9',
   gaId: process.env.NEXT_PUBLIC_GA_ID,
   pixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID,
 }
