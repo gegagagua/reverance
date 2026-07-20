@@ -29,19 +29,8 @@ export function Location({ content }: { content: Dictionary['location'] }) {
           </Heading>
           <Text>{content.subtitle}</Text>
         </div>
-        <ul className="grid gap-4 sm:grid-cols-3">
-          {content.highlights.map((highlight) => (
-            <li
-              key={highlight.label}
-              className="flex items-center gap-3 rounded-2xl border border-foreground/10 bg-foreground/[0.02] p-5"
-            >
-              <span className="text-2xl" aria-hidden>
-                {highlight.icon}
-              </span>
-              <span className="font-medium">{highlight.label}</span>
-            </li>
-          ))}
-        </ul>
+        {/* Highlight cards (sea/airport/boulevard) removed 2026-07-17 — they
+            duplicate the "Why this location" section (LocationAdvantages) above. */}
         <div className="grid gap-6 sm:grid-cols-2">
           {addresses.map((address) => (
             <div key={address.label} className="flex flex-col gap-1">

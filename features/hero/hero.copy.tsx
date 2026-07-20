@@ -1,23 +1,11 @@
-'use client'
-
 import { Container, Heading, Text } from '@/components/ui'
-import { cn } from '@/lib/cn'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { RequestCallButton } from '@/features/request-call'
-import { useHeroCopyVisible } from './hero.logic'
 
-/** Hero overlay copy + CTA. Faded out on the first slide (image-only intro). */
+/** Server Component. Hero overlay copy + CTA, shown statically over every slide. */
 export function HeroCopy({ content }: { content: Dictionary['hero'] }) {
-  const visible = useHeroCopyVisible()
-
   return (
-    <Container
-      aria-hidden={!visible}
-      className={cn(
-        'relative z-10 w-full pb-24 pt-28 transition-opacity duration-700',
-        visible ? 'opacity-100' : 'pointer-events-none opacity-0'
-      )}
-    >
+    <Container className="relative z-10 w-full pb-24 pt-28">
       <div className="flex max-w-3xl flex-col gap-6">
         <span className="text-sm uppercase tracking-widest text-white/80">{content.eyebrow}</span>
         <Heading as="h1" size="xl" className="text-white">

@@ -79,7 +79,7 @@ export function Flats({ content, images }: { content: Dictionary['flats']; image
             />
           ))}
         </div>
-        {activeFlat && <FlatDetails flat={activeFlat} labels={content.specLabels} />}
+        {activeFlat && <FlatDetails flat={activeFlat} />}
       </Container>
     </section>
   )

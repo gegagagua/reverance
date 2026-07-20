@@ -9,7 +9,8 @@ import { StructuredData } from '@/features/structured-data'
 import { SiteHeader } from '@/features/site-header'
 import { LeadForm } from '@/features/lead-form'
 import { Investment } from '@/features/investment'
-import { Roi } from '@/features/roi'
+// Temporarily hidden per client (2026-07-17): ROI calc not ready to publish.
+// import { Roi } from '@/features/roi'
 import { LocationAdvantages } from '@/features/location-advantages'
 import { FlatsLazy } from '@/features/flats/flats.lazy'
 import { Faq } from '@/features/faq'
@@ -56,16 +57,18 @@ export default async function LandingPage({ params }: Params) {
   const { lang, slug } = await params
   if (!isLocale(lang) || !isLandingSlug(slug)) notFound()
   const [dict, images] = await Promise.all([getDictionary(lang), getImages()])
+  // Breadcrumb label = the page title without the "| brand" suffix the Home crumb already carries.
+  const crumbName = dict.landings[slug].title.split(' | ')[0] ?? dict.landings[slug].title
 
   return (
     <>
-      <StructuredData locale={lang} dict={dict} />
+      <StructuredData locale={lang} dict={dict} crumb={{ name: crumbName, slug }} />
       <SiteHeader locale={lang} nav={dict.nav} logo={images.logos.header} />
       <main>
         <LandingHero content={dict.landings[slug]} brand={dict.nav.brand} />
         <LeadForm content={dict.leadForm} locale={lang} />
         <Investment content={dict.investment} icons={images.investmentIcons} />
-        <Roi content={dict.roi} />
+        {/* <Roi content={dict.roi} /> — temporarily hidden (2026-07-17) */}
         <LocationAdvantages content={dict.locationAdvantages} />
         <FlatsLazy content={dict.flats} images={images.flatImages} />
         <Faq content={dict.faq} />

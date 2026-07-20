@@ -14,5 +14,5 @@ export const LOGO_PATH = '/theme/images/logo.png'
 /** Precise project + sales-office coordinates (shared with the location map). */
 export const GEO = {
   project: { lat: 41.6172908, lng: 41.598081 },
-  sales: { lat: 41.6325669, lng: 41.6136097 },
+  sales: { lat: 41.6314357, lng: 41.6097061 },
 } as const

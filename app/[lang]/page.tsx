@@ -10,10 +10,12 @@ import { Floorplan } from '@/features/floorplan'
 import { About } from '@/features/about'
 import { Overview } from '@/features/overview'
 import { Investment } from '@/features/investment'
-import { Roi } from '@/features/roi'
+// Temporarily hidden per client (2026-07-17): ROI calc & construction progress
+// not ready to publish yet. Restore when content is finalized.
+// import { Roi } from '@/features/roi'
 import { CtaBand } from '@/features/cta-band'
 import { GalleryLazy } from '@/features/gallery/gallery.lazy'
-import { Progress } from '@/features/progress'
+// import { Progress } from '@/features/progress'
 import { FlatsLazy } from '@/features/flats/flats.lazy'
 import { Process } from '@/features/process'
 import { LocationAdvantages } from '@/features/location-advantages'
@@ -39,16 +41,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <StructuredData locale={lang} dict={dict} />
       <SiteHeader locale={lang} nav={dict.nav} logo={images.logos.header} />
       <main>
-        <Hero content={dict.hero} contact={dict.contact} locale={lang} slides={images.heroSlides} />
+        <Hero content={dict.hero} slides={images.heroSlides} />
         <LeadForm content={dict.leadForm} locale={lang} />
         <About content={dict.about} />
         <Floorplan content={dict.floorplan} />
         <Overview content={dict.overview} />
         <Investment content={dict.investment} icons={images.investmentIcons} />
-        <Roi content={dict.roi} />
+        {/* <Roi content={dict.roi} /> — temporarily hidden (2026-07-17) */}
         <CtaBand content={dict.investment.cta} source="investment" />
         <GalleryLazy content={dict.gallery} />
-        <Progress content={dict.progress} />
+        {/* <Progress content={dict.progress} /> — temporarily hidden (2026-07-17) */}
         <FlatsLazy content={dict.flats} images={images.flatImages} />
         <Process content={dict.process} />
         <CtaBand content={dict.cta.apartments} source="apartments" />

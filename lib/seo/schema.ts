@@ -25,7 +25,7 @@ const ID = {
  * BreadcrumbList. All facts (phones, address, FAQ) come from the dictionary, so
  * the markup stays in sync with the rendered page and each locale's copy.
  */
-export function buildSchemaGraph(locale: Locale, dict: Dictionary) {
+export function buildSchemaGraph(locale: Locale, dict: Dictionary, crumb?: { name: string; slug: string }) {
   const pageUrl = `${SITE_URL}/${locale}`
   const logo = `${SITE_URL}${LOGO_PATH}`
 
@@ -90,9 +90,16 @@ export function buildSchemaGraph(locale: Locale, dict: Dictionary) {
     })),
   }
 
+  // Home crumb always; on landing pages (`crumb` set) append the Home → Landing
+  // trail so the BreadcrumbList reflects the actual page, not just the home URL.
   const breadcrumb = {
     '@type': 'BreadcrumbList',
-    itemListElement: [{ '@type': 'ListItem', position: 1, name: PROJECT_NAME, item: pageUrl }],
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: PROJECT_NAME, item: pageUrl },
+      ...(crumb
+        ? [{ '@type': 'ListItem', position: 2, name: crumb.name, item: `${pageUrl}/l/${crumb.slug}` }]
+        : []),
+    ],
   }
 
   return {
