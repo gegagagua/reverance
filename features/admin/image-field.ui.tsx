@@ -7,8 +7,9 @@ import { uploadImageAction } from '@/app/(admin)/admin/actions'
 import { useField } from './admin.logic'
 import { ASSET_LIST_ID, humanize, isImagePath } from './admin.content'
 
-/** Image slot: live preview, path field (with asset autocomplete), and file upload. */
-export function ImageField({ path, label }: { path: string[]; label: string }) {
+/** Image slot: live preview, path field (with asset autocomplete), and file upload.
+ * `pinned` slots are hardcoded on the site, so they render read-only here. */
+export function ImageField({ path, label, pinned }: { path: string[]; label: string; pinned?: boolean }) {
   const [value, setValue] = useField(path)
   const fileRef = useRef<HTMLInputElement>(null)
   const [busy, setBusy] = useState(false)
@@ -26,6 +27,33 @@ export function ImageField({ path, label }: { path: string[]; label: string }) {
       setBusy(false)
       if (fileRef.current) fileRef.current.value = ''
     }
+  }
+
+  if (pinned) {
+    return (
+      <div className="flex flex-col gap-1.5">
+        <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-foreground/50">
+          {humanize(label)}
+          <span className="rounded bg-foreground/10 px-1.5 py-0.5 text-[10px] tracking-normal">
+            🔒 Pinned
+          </span>
+        </span>
+        <div className="flex items-center gap-3">
+          {isImagePath(value) ? (
+            <Image
+              src={value}
+              alt=""
+              width={64}
+              height={48}
+              className="h-12 w-16 shrink-0 rounded-md object-cover"
+            />
+          ) : (
+            <span className="h-12 w-16 shrink-0 rounded-md bg-foreground/10" />
+          )}
+          <span className="truncate text-sm text-foreground/50">{value}</span>
+        </div>
+      </div>
+    )
   }
 
   return (

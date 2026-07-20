@@ -1,6 +1,7 @@
 import { FieldLeaf } from './field-leaf.ui'
 import { ImageField } from './image-field.ui'
 import { humanize } from './admin.content'
+import { isPinnedImage } from '@/lib/content/pinned'
 
 interface Props {
   node: unknown
@@ -27,7 +28,13 @@ export function FieldTree({ node, path, mode }: Props) {
         const childPath = [...path, key]
         if (typeof child === 'string') {
           return mode === 'media' ? (
-            <ImageField key={key} path={childPath} label={key} />
+            // childPath is ['images', ...rest]; pin keys are dot-paths under SiteImages.
+            <ImageField
+              key={key}
+              path={childPath}
+              label={key}
+              pinned={isPinnedImage(childPath.slice(1).join('.'))}
+            />
           ) : (
             <FieldLeaf key={key} path={childPath} label={key} />
           )

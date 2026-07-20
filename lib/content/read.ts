@@ -4,6 +4,7 @@ import type { Locale } from '@/i18n/config'
 import { readPayload, writePayload } from './db'
 import { deepMerge } from './merge'
 import { DEFAULT_IMAGES } from './defaults'
+import { applyPinnedImages } from './pinned'
 import type { ContentOverrides, SiteImages, TextOverride } from './types'
 
 const EMPTY: ContentOverrides = { text: {}, images: {} }
@@ -28,9 +29,11 @@ export async function getTextOverride(locale: Locale): Promise<TextOverride | un
   return (await getOverrides()).text[locale]
 }
 
-/** The effective image set: shipped defaults with saved overrides merged on top. */
+/** The effective image set: shipped defaults with saved overrides merged on top,
+ * then pinned slots (e.g. hero-2) forced back to their hardcoded defaults. */
 export async function getImages(): Promise<SiteImages> {
-  return deepMerge(DEFAULT_IMAGES, (await getOverrides()).images)
+  const merged = deepMerge(DEFAULT_IMAGES, (await getOverrides()).images)
+  return applyPinnedImages(merged)
 }
 
 /** Persists the full overrides payload (called from the admin save action). */
