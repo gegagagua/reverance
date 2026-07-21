@@ -1,4 +1,4 @@
-import { Container, Heading, Section, Text } from '@/components/ui'
+import { Container, Section, Text } from '@/components/ui'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { MAP_MARKERS } from './location.content'
 import { LocationMap } from './location.map'
@@ -24,13 +24,21 @@ export function Location({ content }: { content: Dictionary['location'] }) {
       <Container className="flex flex-col gap-10">
         <div className="flex flex-col gap-3">
           <span className="text-sm uppercase tracking-widest text-accent">{content.eyebrow}</span>
-          <Heading as="h2" size="lg">
-            {content.heading}
-          </Heading>
           <Text>{content.subtitle}</Text>
         </div>
-        {/* Highlight cards (sea/airport/boulevard) removed 2026-07-17 — they
-            duplicate the "Why this location" section (LocationAdvantages) above. */}
+        <ul className="grid gap-4 sm:grid-cols-3">
+          {content.highlights.map((highlight) => (
+            <li
+              key={highlight.label}
+              className="flex items-center gap-3 rounded-2xl border border-foreground/10 bg-foreground/[0.02] p-5"
+            >
+              <span className="text-2xl" aria-hidden>
+                {highlight.icon}
+              </span>
+              <span className="font-medium">{highlight.label}</span>
+            </li>
+          ))}
+        </ul>
         <div className="grid gap-6 sm:grid-cols-2">
           {addresses.map((address) => (
             <div key={address.label} className="flex flex-col gap-1">
