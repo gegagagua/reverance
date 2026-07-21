@@ -21,9 +21,12 @@ export function About({ content }: { content: Dictionary['about'] }) {
             </Text>
           ))}
         </div>
-        <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/10">
-          {content.stats.map((stat) => (
-            <li key={stat.label} className="bg-background p-8">
+        <ul className="grid grid-cols-2 gap-4">
+          {content.stats.slice(0, 2).map((stat) => (
+            <li
+              key={stat.label}
+              className="flex flex-col justify-center rounded-2xl border border-foreground/10 bg-foreground/[0.02] p-8"
+            >
               <Stat value={stat.value} label={stat.label} />
             </li>
           ))}

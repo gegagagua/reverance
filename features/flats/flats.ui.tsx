@@ -3,7 +3,9 @@
 import Image from 'next/image'
 import { Container, Heading } from '@/components/ui'
 import { cn } from '@/lib/cn'
+import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
+import type { QuickCallContent } from '@/features/quick-call'
 import { useFlats } from './flats.logic'
 import { FlatDetails } from './flats.details'
 
@@ -12,7 +14,17 @@ const ARROW =
 
 /** One-at-a-time carousel of apartment types: overlaid arrows on desktop,
  * swipe on mobile, with dot indicators below. */
-export function Flats({ content, images }: { content: Dictionary['flats']; images: string[] }) {
+export function Flats({
+  content,
+  images,
+  locale,
+  quick,
+}: {
+  content: Dictionary['flats']
+  images: string[]
+  locale: Locale
+  quick: QuickCallContent
+}) {
   const { index, setIndex, next, prev, swipeRef } = useFlats(content.items.length)
   const activeFlat = content.items[index] ?? content.items[0]
 
@@ -79,7 +91,7 @@ export function Flats({ content, images }: { content: Dictionary['flats']; image
             />
           ))}
         </div>
-        {activeFlat && <FlatDetails flat={activeFlat} />}
+        {activeFlat && <FlatDetails flat={activeFlat} locale={locale} quick={quick} />}
       </Container>
     </section>
   )

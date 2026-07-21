@@ -25,10 +25,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: false, message: 'Invalid body' }, { status: 400 })
   }
 
-  const name = (body.name ?? '').trim()
   const phone = (body.phone ?? '').trim()
-  if (!name || phone.length < 5) {
-    return NextResponse.json({ success: false, message: 'Name and phone are required' }, { status: 422 })
+  // Name is optional: the inline slider widget captures phone only, so fall back
+  // to the phone number as the display name for those quick-call leads.
+  const name = (body.name ?? '').trim() || phone
+  if (phone.length < 5) {
+    return NextResponse.json({ success: false, message: 'Phone is required' }, { status: 422 })
   }
 
   const payload: CrmPayload = {

@@ -59,6 +59,12 @@ export default async function LandingPage({ params }: Params) {
   const [dict, images] = await Promise.all([getDictionary(lang), getImages()])
   // Breadcrumb label = the page title without the "| brand" suffix the Home crumb already carries.
   const crumbName = dict.landings[slug].title.split(' | ')[0] ?? dict.landings[slug].title
+  const quick = {
+    placeholder: dict.leadForm.phone,
+    button: dict.hero.cta,
+    sending: dict.leadForm.sending,
+    error: dict.leadForm.error,
+  }
 
   return (
     <>
@@ -70,7 +76,7 @@ export default async function LandingPage({ params }: Params) {
         <Investment content={dict.investment} icons={images.investmentIcons} />
         {/* <Roi content={dict.roi} /> — temporarily hidden (2026-07-17) */}
         <LocationAdvantages content={dict.locationAdvantages} />
-        <FlatsLazy content={dict.flats} images={images.flatImages} />
+        <FlatsLazy content={dict.flats} images={images.flatImages} locale={lang} quick={quick} />
         <Faq content={dict.faq} />
         <Contact content={dict.contact} locale={lang} />
       </main>

@@ -8,8 +8,8 @@ export const MAP_MARKERS = {
     url: 'https://maps.app.goo.gl/AkRFiBg4K2y6Fpi78',
   },
   sales: {
-    lat: 41.6314357,
-    lng: 41.6097061,
+    lat: 41.6325669,
+    lng: 41.6136097,
     url: 'https://maps.app.goo.gl/NPLS4FDukw3wjVGR9',
   },
 } as const

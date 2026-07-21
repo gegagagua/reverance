@@ -18,9 +18,7 @@ import { GalleryLazy } from '@/features/gallery/gallery.lazy'
 // import { Progress } from '@/features/progress'
 import { FlatsLazy } from '@/features/flats/flats.lazy'
 import { Process } from '@/features/process'
-import { LocationAdvantages } from '@/features/location-advantages'
 import { Location } from '@/features/location'
-import { Testimonials } from '@/features/testimonials'
 import { Faq } from '@/features/faq'
 import { Contact } from '@/features/contact'
 import { VideoBand } from '@/features/video-band'
@@ -36,12 +34,21 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   if (!isLocale(lang)) notFound()
   const [dict, images] = await Promise.all([getDictionary(lang), getImages()])
 
+  // Copy for the inline phone-capture on the sliders, assembled from existing
+  // localized strings so no new dictionary keys are needed.
+  const quick = {
+    placeholder: dict.leadForm.phone,
+    button: dict.hero.cta,
+    sending: dict.leadForm.sending,
+    error: dict.leadForm.error,
+  }
+
   return (
     <>
       <StructuredData locale={lang} dict={dict} />
       <SiteHeader locale={lang} nav={dict.nav} logo={images.logos.header} />
       <main>
-        <Hero content={dict.hero} slides={images.heroSlides} />
+        <Hero content={dict.hero} slides={images.heroSlides} locale={lang} contact={dict.contact} />
         <LeadForm content={dict.leadForm} locale={lang} />
         <About content={dict.about} />
         <Floorplan content={dict.floorplan} />
@@ -51,13 +58,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <CtaBand content={dict.investment.cta} source="investment" />
         <GalleryLazy content={dict.gallery} />
         {/* <Progress content={dict.progress} /> — temporarily hidden (2026-07-17) */}
-        <FlatsLazy content={dict.flats} images={images.flatImages} />
+        <FlatsLazy content={dict.flats} images={images.flatImages} locale={lang} quick={quick} />
         <Process content={dict.process} />
         <CtaBand content={dict.cta.apartments} source="apartments" />
-        <LocationAdvantages content={dict.locationAdvantages} />
         <Location content={dict.location} />
         <CtaBand content={dict.cta.location} source="location" />
-        <Testimonials content={dict.testimonials} />
         <Faq content={dict.faq} />
         <Contact content={dict.contact} locale={lang} />
         <VideoBand content={dict.video} video={images.video} />
