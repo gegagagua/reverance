@@ -2,7 +2,7 @@ import { useCallback, useState, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Locale } from '@/i18n/config'
 import type { LeadStatus } from '@/features/lead-form/lead-form.state'
-import { track } from '@/lib/track'
+import { track, trackLead } from '@/lib/track'
 import { getUtm } from '@/lib/utm'
 
 /**
@@ -11,7 +11,7 @@ import { getUtm } from '@/lib/utm'
  * as the quick form, then routes to Thank-You. State is local (not a shared
  * store) so multiple widgets on the page never share a typed value.
  */
-export function useQuickCall(locale: Locale, source: string, apartment?: string) {
+export function useQuickCall(locale: Locale, source: string, apartment?: string, leadEvent?: string) {
   const router = useRouter()
   const [phone, setPhone] = useState('')
   const [status, setStatus] = useState<LeadStatus>('idle')
@@ -38,12 +38,13 @@ export function useQuickCall(locale: Locale, source: string, apartment?: string)
         })
         if (!res.ok) throw new Error('CRM submission failed')
         track('form_submission', { apartment: apartment ?? '', source })
+        if (leadEvent) trackLead(leadEvent, { source })
         router.push(`/${locale}/thank-you`)
       } catch {
         setStatus('error')
       }
     },
-    [phone, source, apartment, locale, router]
+    [phone, source, apartment, leadEvent, locale, router]
   )
 
   return { phone, setPhone, status, submit }

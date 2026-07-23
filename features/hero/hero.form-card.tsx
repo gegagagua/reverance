@@ -27,7 +27,7 @@ export function HeroFormCard({ content, locale }: { content: Dictionary['contact
         </Heading>
         <Text className="text-sm text-foreground/70">{content.subtitle}</Text>
       </div>
-      <BookingForm content={content} locale={locale} />
+      <BookingForm content={content} locale={locale} leadEvent="Lead_form_sumbit_slider" />
     </div>
   )
 }

@@ -28,7 +28,12 @@ export function SiteFooter({
         <Heading as="h2" size="lg" className="max-w-xl text-white">
           {content.ctaTitle}
         </Heading>
-        <RequestCallButton variant="accent" size="lg" data-cta="footer">
+        <RequestCallButton
+          variant="accent"
+          size="lg"
+          data-cta="footer"
+          leadContext={{ leadEvent: 'lead_form_submit_footer' }}
+        >
           {content.ctaButton}
         </RequestCallButton>
         <Image

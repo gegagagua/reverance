@@ -9,7 +9,11 @@ import type { Dictionary } from '@/i18n/dictionaries'
 const BookingForm = dynamic(() => import('./booking-form.ui').then((m) => m.BookingForm), { ssr: false })
 
 /** Scroll-deferred booking form. `min-h` reserves space to avoid layout shift. */
-export function BookingFormLazy(props: { content: Dictionary['contact']; locale: Locale }) {
+export function BookingFormLazy(props: {
+  content: Dictionary['contact']
+  locale: Locale
+  leadEvent?: string
+}) {
   return (
     <Defer className="min-h-[28rem]">
       <BookingForm {...props} />

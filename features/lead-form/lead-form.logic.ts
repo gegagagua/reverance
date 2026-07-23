@@ -1,12 +1,15 @@
 import { useCallback, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Locale } from '@/i18n/config'
-import { track } from '@/lib/track'
+import { track, trackLead } from '@/lib/track'
 import { getUtm } from '@/lib/utm'
 import { useLeadStore } from './lead-form.state'
 
 /** CTA source recorded with every lead from the post-hero quick form. */
 export const LEAD_SOURCE = 'hero_quick_form'
+
+/** GTM event fired when this form's lead is actually sent (mapped to `render`). */
+export const LEAD_EVENT = 'Lead-form-submit-render'
 
 /**
  * Behaviour for the compact post-hero lead form. Posts name + phone/WhatsApp to
@@ -45,6 +48,7 @@ export function useLeadForm(locale: Locale) {
         })
         if (!res.ok) throw new Error('CRM submission failed')
         track('form_submission', { apartment, source: LEAD_SOURCE })
+        trackLead(LEAD_EVENT, { source: LEAD_SOURCE })
         router.push(`/${locale}/thank-you`)
       } catch {
         setStatus('error')

@@ -9,6 +9,14 @@ interface CtaContent {
   button: string
 }
 
+/** GTM lead event per band, keyed by the band's `source` (button copy differs:
+ * investment presentation / apartment plans / talk to an advisor). */
+const LEAD_EVENT: Record<string, string> = {
+  investment: 'lead_form_submit_investment',
+  apartments: 'lead_form_submit_plans',
+  location: 'lead_form_submit_advisor',
+}
+
 /**
  * High-contrast CTA band reused at each decision point (after Investment,
  * Apartments, Location). Client leaf so the button click fires a `cta_click`
@@ -21,7 +29,12 @@ export function CtaBand({ content, source }: { content: CtaContent; source: stri
         <Heading as="h3" size="lg" className="max-w-2xl text-white">
           {content.title}
         </Heading>
-        <RequestCallButton variant="accent" size="lg" onClick={() => track('cta_click', { source })}>
+        <RequestCallButton
+          variant="accent"
+          size="lg"
+          leadContext={{ leadEvent: LEAD_EVENT[source] }}
+          onClick={() => track('cta_click', { source })}
+        >
           {content.button}
         </RequestCallButton>
       </Container>

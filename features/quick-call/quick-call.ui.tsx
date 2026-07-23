@@ -24,6 +24,7 @@ export function QuickCall({
   locale,
   source,
   apartment,
+  leadEvent,
   tone = 'light',
   className,
 }: {
@@ -31,10 +32,11 @@ export function QuickCall({
   locale: Locale
   source: string
   apartment?: string
+  leadEvent?: string
   tone?: 'light' | 'dark'
   className?: string
 }) {
-  const q = useQuickCall(locale, source, apartment)
+  const q = useQuickCall(locale, source, apartment, leadEvent)
   const dark = tone === 'dark'
   return (
     <form onSubmit={q.submit} className={cn('flex w-full max-w-md flex-col gap-2', className)}>

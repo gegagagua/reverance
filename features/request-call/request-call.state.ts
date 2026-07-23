@@ -5,6 +5,9 @@ import { create } from 'zustand'
 export interface RequestCallContext {
   apartment?: string
   source?: string
+  /** GTM event fired when the lead is sent, so each CTA that opens the modal
+   * (header, footer, CTA bands) reports under its own trigger name. */
+  leadEvent?: string
 }
 
 interface RequestCallState {

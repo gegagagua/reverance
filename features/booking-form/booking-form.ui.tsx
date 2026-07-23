@@ -8,9 +8,18 @@ import { COUNTRY_CODES, LABEL_CLASS, SELECT_CLASS } from './booking-form.content
 import { useBookingForm } from './booking-form.logic'
 import { BookingDetails } from './booking-form.details'
 
-/** Full lead-capture form. Presentation only; behaviour lives in the logic hook. */
-export function BookingForm({ content, locale }: { content: Dictionary['contact']; locale: Locale }) {
-  const f = useBookingForm(locale)
+/** Full lead-capture form. Presentation only; behaviour lives in the logic hook.
+ * `leadEvent` names the GTM event fired when this instance's lead is sent. */
+export function BookingForm({
+  content,
+  locale,
+  leadEvent,
+}: {
+  content: Dictionary['contact']
+  locale: Locale
+  leadEvent?: string
+}) {
+  const f = useBookingForm(locale, leadEvent)
   return (
     <form onSubmit={f.submit} className="grid gap-5">
       <label className="grid gap-2">

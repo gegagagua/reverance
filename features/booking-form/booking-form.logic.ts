@@ -1,7 +1,7 @@
 import { useCallback, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Locale } from '@/i18n/config'
-import { track } from '@/lib/track'
+import { track, trackLead } from '@/lib/track'
 import { getUtm } from '@/lib/utm'
 import { useBookingStore } from './booking-form.state'
 
@@ -11,7 +11,7 @@ import { useBookingStore } from './booking-form.state'
  * CRM (same endpoint the legacy site uses, via `/api/crm/submit`), fires the
  * `form_submission` conversion and routes to the locale's Thank-You page.
  */
-export function useBookingForm(locale: Locale) {
+export function useBookingForm(locale: Locale, leadEvent?: string) {
   const router = useRouter()
   const name = useBookingStore((s) => s.name)
   const countryCode = useBookingStore((s) => s.countryCode)
@@ -48,12 +48,13 @@ export function useBookingForm(locale: Locale) {
         })
         if (!res.ok) throw new Error('CRM submission failed')
         track('form_submission', { channel, apartment, source })
+        if (leadEvent) trackLead(leadEvent, { source })
         router.push(`/${locale}/thank-you`)
       } catch {
         setStatus('error')
       }
     },
-    [name, countryCode, phone, channel, time, apartment, source, locale, router, setStatus]
+    [name, countryCode, phone, channel, time, apartment, source, leadEvent, locale, router, setStatus]
   )
 
   return { name, countryCode, phone, email, apartment, channel, time, status, update, submit }
