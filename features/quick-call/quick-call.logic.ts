@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation'
 import type { Locale } from '@/i18n/config'
 import type { LeadStatus } from '@/features/lead-form/lead-form.state'
 import { track, trackLead } from '@/lib/track'
+import { useFormStart } from '@/lib/use-form-start'
 import { getUtm } from '@/lib/utm'
 
 /**
@@ -11,10 +12,24 @@ import { getUtm } from '@/lib/utm'
  * as the quick form, then routes to Thank-You. State is local (not a shared
  * store) so multiple widgets on the page never share a typed value.
  */
-export function useQuickCall(locale: Locale, source: string, apartment?: string, leadEvent?: string) {
+export function useQuickCall(
+  locale: Locale,
+  source: string,
+  apartment?: string,
+  leadEvent?: string,
+  startEvent?: string
+) {
   const router = useRouter()
-  const [phone, setPhone] = useState('')
+  const [phone, setRawPhone] = useState('')
   const [status, setStatus] = useState<LeadStatus>('idle')
+  const onStart = useFormStart(startEvent)
+  const setPhone = useCallback(
+    (value: string) => {
+      onStart()
+      setRawPhone(value)
+    },
+    [onStart]
+  )
 
   const submit = useCallback(
     async (event: FormEvent<HTMLFormElement>) => {

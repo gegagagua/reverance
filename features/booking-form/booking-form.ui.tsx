@@ -9,17 +9,20 @@ import { useBookingForm } from './booking-form.logic'
 import { BookingDetails } from './booking-form.details'
 
 /** Full lead-capture form. Presentation only; behaviour lives in the logic hook.
- * `leadEvent` names the GTM event fired when this instance's lead is sent. */
+ * `leadEvent` names the GTM event fired when this instance's lead is sent;
+ * `startEvent` the one fired the first time the visitor types into it. */
 export function BookingForm({
   content,
   locale,
   leadEvent,
+  startEvent,
 }: {
   content: Dictionary['contact']
   locale: Locale
   leadEvent?: string
+  startEvent?: string
 }) {
-  const f = useBookingForm(locale, leadEvent)
+  const f = useBookingForm(locale, leadEvent, startEvent)
   return (
     <form onSubmit={f.submit} className="grid gap-5">
       <label className="grid gap-2">

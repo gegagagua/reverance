@@ -54,7 +54,9 @@ export function SiteHeader({ locale, nav, logo }: { locale: Locale; nav: Diction
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={() => openRequestCall({ leadEvent: 'lead_form_sumbit_header' })}
+            onClick={() =>
+              openRequestCall({ leadEvent: 'lead_form_sumbit_header', startEvent: 'lead_form_start_header' })
+            }
             className={cn(
               'hidden whitespace-nowrap sm:inline-flex',
               buttonClass({ variant: 'accent', size: 'sm' }),
@@ -95,7 +97,10 @@ export function SiteHeader({ locale, nav, logo }: { locale: Locale; nav: Diction
               type="button"
               onClick={() => {
                 closeMobile()
-                openRequestCall({ leadEvent: 'lead_form_sumbit_header' })
+                openRequestCall({
+                  leadEvent: 'lead_form_sumbit_header',
+                  startEvent: 'lead_form_start_header',
+                })
               }}
               className={cn('my-3', buttonClass({ variant: 'accent', size: 'sm' }))}
             >

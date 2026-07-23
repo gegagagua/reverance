@@ -32,7 +32,7 @@ export function SiteFooter({
           variant="accent"
           size="lg"
           data-cta="footer"
-          leadContext={{ leadEvent: 'lead_form_submit_footer' }}
+          leadContext={{ leadEvent: 'lead_form_submit_footer', startEvent: 'lead_form_start_footer' }}
         >
           {content.ctaButton}
         </RequestCallButton>

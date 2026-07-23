@@ -27,7 +27,8 @@ export function FlatDetails({
         locale={locale}
         source={`flats_${flat.leadType}`}
         apartment={flat.leadType}
-        leadEvent="lead_form_submit_quick"
+        leadEvent="Lead-form-submit-render"
+        startEvent="Lead-form-start-render"
       />
     </div>
   )

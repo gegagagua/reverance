@@ -32,7 +32,12 @@ export function RequestCallModal({ content, locale }: { content: Dictionary['con
         </Heading>
         <Text>{content.subtitle}</Text>
         <div className="mt-2">
-          <BookingForm content={content} locale={locale} leadEvent={context.leadEvent} />
+          <BookingForm
+            content={content}
+            locale={locale}
+            leadEvent={context.leadEvent}
+            startEvent={context.startEvent}
+          />
         </div>
       </div>
     </Modal>

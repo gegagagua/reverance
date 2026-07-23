@@ -13,6 +13,7 @@ export function BookingFormLazy(props: {
   content: Dictionary['contact']
   locale: Locale
   leadEvent?: string
+  startEvent?: string
 }) {
   return (
     <Defer className="min-h-[28rem]">

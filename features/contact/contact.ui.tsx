@@ -32,7 +32,12 @@ export function Contact({ content, locale }: { content: Dictionary['contact']; l
             ))}
           </dl>
         </div>
-        <BookingFormLazy content={content} locale={locale} leadEvent="lead_form_submit_contact" />
+        <BookingFormLazy
+          content={content}
+          locale={locale}
+          leadEvent="lead_form_submit_contact"
+          startEvent="lead_form_start_contact"
+        />
       </Container>
     </Section>
   )

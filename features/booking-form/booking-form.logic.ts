@@ -2,8 +2,9 @@ import { useCallback, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Locale } from '@/i18n/config'
 import { track, trackLead } from '@/lib/track'
+import { useFormStart } from '@/lib/use-form-start'
 import { getUtm } from '@/lib/utm'
-import { useBookingStore } from './booking-form.state'
+import { useBookingStore, type BookingFields } from './booking-form.state'
 
 /**
  * Bridges the booking store to the form. Field-level selectors keep typing in
@@ -11,7 +12,10 @@ import { useBookingStore } from './booking-form.state'
  * CRM (same endpoint the legacy site uses, via `/api/crm/submit`), fires the
  * `form_submission` conversion and routes to the locale's Thank-You page.
  */
-export function useBookingForm(locale: Locale, leadEvent?: string) {
+/** Fields whose typing counts as "starting" the form (selects/radios don't). */
+const TYPED_FIELDS: (keyof BookingFields)[] = ['name', 'phone', 'email']
+
+export function useBookingForm(locale: Locale, leadEvent?: string, startEvent?: string) {
   const router = useRouter()
   const name = useBookingStore((s) => s.name)
   const countryCode = useBookingStore((s) => s.countryCode)
@@ -22,8 +26,16 @@ export function useBookingForm(locale: Locale, leadEvent?: string) {
   const time = useBookingStore((s) => s.time)
   const source = useBookingStore((s) => s.source)
   const status = useBookingStore((s) => s.status)
-  const update = useBookingStore((s) => s.update)
   const setStatus = useBookingStore((s) => s.setStatus)
+  const setFields = useBookingStore((s) => s.update)
+  const onStart = useFormStart(startEvent)
+  const update = useCallback(
+    (patch: Partial<BookingFields>) => {
+      if (TYPED_FIELDS.some((f) => f in patch)) onStart()
+      setFields(patch)
+    },
+    [onStart, setFields]
+  )
 
   const submit = useCallback(
     async (event: FormEvent<HTMLFormElement>) => {

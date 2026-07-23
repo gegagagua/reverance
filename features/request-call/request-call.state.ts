@@ -8,6 +8,9 @@ export interface RequestCallContext {
   /** GTM event fired when the lead is sent, so each CTA that opens the modal
    * (header, footer, CTA bands) reports under its own trigger name. */
   leadEvent?: string
+  /** GTM event fired the first time the visitor types into the opened form,
+   * matching the trigger that opened it. */
+  startEvent?: string
 }
 
 interface RequestCallState {

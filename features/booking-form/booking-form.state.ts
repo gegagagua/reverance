@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 export type BookingStatus = 'idle' | 'submitting' | 'success' | 'error'
 
-interface BookingFields {
+export interface BookingFields {
   name: string
   countryCode: string
   phone: string

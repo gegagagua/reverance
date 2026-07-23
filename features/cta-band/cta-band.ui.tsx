@@ -17,6 +17,13 @@ const LEAD_EVENT: Record<string, string> = {
   location: 'lead_form_submit_advisor',
 }
 
+/** Matching `lead_form_start_*` event per band, fired on first keystroke. */
+const START_EVENT: Record<string, string> = {
+  investment: 'lead_form_start_investment',
+  apartments: 'lead_form_start_plans',
+  location: 'lead_form_start_advisor',
+}
+
 /**
  * High-contrast CTA band reused at each decision point (after Investment,
  * Apartments, Location). Client leaf so the button click fires a `cta_click`
@@ -32,7 +39,7 @@ export function CtaBand({ content, source }: { content: CtaContent; source: stri
         <RequestCallButton
           variant="accent"
           size="lg"
-          leadContext={{ leadEvent: LEAD_EVENT[source] }}
+          leadContext={{ leadEvent: LEAD_EVENT[source], startEvent: START_EVENT[source] }}
           onClick={() => track('cta_click', { source })}
         >
           {content.button}
