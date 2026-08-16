@@ -8,13 +8,21 @@ export interface ModalProps {
   open: boolean
   onClose: () => void
   label?: string
+  /** `md` (default) is the compact centered card; `full` fills ~90% of the
+   * viewport for media-heavy content like the live-camera wall. */
+  size?: 'md' | 'full'
   className?: string
   children: ReactNode
 }
 
+const panelBySize = {
+  md: 'max-h-[90vh] w-full max-w-lg p-8 sm:p-10',
+  full: 'h-[95vh] w-[95vw] max-w-[95vw] p-3 sm:h-[90vh] sm:p-6',
+}
+
 /** Centered dialog over a dimmed overlay. Esc / backdrop / close-button dismiss.
  * Renders nothing when closed. Content is caller-owned. */
-export function Modal({ open, onClose, label, className, children }: ModalProps) {
+export function Modal({ open, onClose, label, size = 'md', className, children }: ModalProps) {
   useModalControls({ open, onClose })
   if (!open) return null
 
@@ -24,12 +32,13 @@ export function Modal({ open, onClose, label, className, children }: ModalProps)
       aria-modal="true"
       aria-label={label}
       onClick={onClose}
-      className="fixed inset-0 z-[100] flex animate-fade-in items-center justify-center bg-black/60 p-4"
+      className="fixed inset-0 z-[100] flex animate-fade-in items-center justify-center bg-black/60 p-2 sm:p-4"
     >
       <div
         onClick={(e) => e.stopPropagation()}
         className={cn(
-          'relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-background p-8 shadow-2xl sm:p-10',
+          'relative overflow-y-auto rounded-2xl bg-background shadow-2xl',
+          panelBySize[size],
           className
         )}
       >

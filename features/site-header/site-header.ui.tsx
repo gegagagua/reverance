@@ -5,14 +5,17 @@ import { Container, buttonClass } from '@/components/ui'
 import { cn } from '@/lib/cn'
 import { LocaleSwitcher } from '@/features/locale-switcher'
 import { useOpenRequestCall } from '@/features/request-call'
+import { useOpenLiveCamera } from '@/features/live-camera'
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
 import { useHeader } from './site-header.logic'
+import { MobileMenu } from './site-header-mobile.ui'
 
 /** Transparent over the hero, solid white once scrolled — mirrors the legacy `.smaller` header. */
 export function SiteHeader({ locale, nav, logo }: { locale: Locale; nav: Dictionary['nav']; logo: string }) {
   const { scrolled, mobileOpen, toggleMobile, closeMobile } = useHeader()
   const openRequestCall = useOpenRequestCall()
+  const openLiveCamera = useOpenLiveCamera()
   const solid = scrolled || mobileOpen
   const link = solid ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'
 
@@ -54,6 +57,17 @@ export function SiteHeader({ locale, nav, logo }: { locale: Locale; nav: Diction
         <div className="flex items-center gap-3">
           <button
             type="button"
+            onClick={openLiveCamera}
+            className={cn(
+              'hidden items-center gap-1.5 whitespace-nowrap text-xs font-medium uppercase tracking-widest transition-colors sm:inline-flex',
+              link
+            )}
+          >
+            <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
+            {nav.liveCamera}
+          </button>
+          <button
+            type="button"
             onClick={() =>
               openRequestCall({ leadEvent: 'lead_form_sumbit_header', startEvent: 'lead_form_start_header' })
             }
@@ -80,35 +94,7 @@ export function SiteHeader({ locale, nav, logo }: { locale: Locale; nav: Diction
           </button>
         </div>
       </Container>
-      {mobileOpen && (
-        <nav className="border-t border-foreground/10 bg-white lg:hidden">
-          <Container className="flex flex-col py-2">
-            {nav.menu.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={closeMobile}
-                className="py-3 text-sm font-medium uppercase tracking-widest text-foreground/80"
-              >
-                {item.label}
-              </a>
-            ))}
-            <button
-              type="button"
-              onClick={() => {
-                closeMobile()
-                openRequestCall({
-                  leadEvent: 'lead_form_sumbit_header',
-                  startEvent: 'lead_form_start_header',
-                })
-              }}
-              className={cn('my-3', buttonClass({ variant: 'accent', size: 'sm' }))}
-            >
-              {nav.call}
-            </button>
-          </Container>
-        </nav>
-      )}
+      {mobileOpen && <MobileMenu nav={nav} closeMobile={closeMobile} />}
     </header>
   )
 }

@@ -18,6 +18,7 @@ import { Contact } from '@/features/contact'
 import { SiteFooter } from '@/features/site-footer'
 import { MobileDockLazy } from '@/features/mobile-dock/mobile-dock.lazy'
 import { RequestCallModalLazy } from '@/features/request-call/request-call.lazy'
+import { LiveCameraModalLazy } from '@/features/live-camera/live-camera.lazy'
 
 type Params = { params: Promise<{ lang: string; slug: string }> }
 
@@ -83,6 +84,7 @@ export default async function LandingPage({ params }: Params) {
       <SiteFooter content={dict.footer} locale={lang} logo={images.logos.footer} />
       <MobileDockLazy content={dict.mobileDock} />
       <RequestCallModalLazy content={dict.contact} locale={lang} />
+      <LiveCameraModalLazy label={dict.nav.liveCamera} />
     </>
   )
 }

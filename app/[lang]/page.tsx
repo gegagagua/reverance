@@ -25,6 +25,7 @@ import { VideoBand } from '@/features/video-band'
 import { SiteFooter } from '@/features/site-footer'
 import { MobileDockLazy } from '@/features/mobile-dock/mobile-dock.lazy'
 import { RequestCallModalLazy } from '@/features/request-call/request-call.lazy'
+import { LiveCameraModalLazy } from '@/features/live-camera/live-camera.lazy'
 
 /** Server Component. Loads the locale dictionary and composes the single page in
  * the brief's order, with CTAs at each decision point (Hero → Investment →
@@ -70,6 +71,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <SiteFooter content={dict.footer} locale={lang} logo={images.logos.footer} />
       <MobileDockLazy content={dict.mobileDock} />
       <RequestCallModalLazy content={dict.contact} locale={lang} />
+      <LiveCameraModalLazy label={dict.nav.liveCamera} />
     </>
   )
 }

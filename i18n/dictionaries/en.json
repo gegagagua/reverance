@@ -7,13 +7,29 @@
   "nav": {
     "brand": "Reverance",
     "menu": [
-      { "label": "About", "href": "#about" },
-      { "label": "Investment", "href": "#investment" },
-      { "label": "Apartments", "href": "#flats" },
-      { "label": "Location", "href": "#location" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Investment",
+        "href": "#investment"
+      },
+      {
+        "label": "Apartments",
+        "href": "#flats"
+      },
+      {
+        "label": "Location",
+        "href": "#location"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "call": "Request a Call",
+    "liveCamera": "Live Camera",
     "language": "Language"
   },
   "hero": {
@@ -75,8 +91,14 @@
       "Our focus is the investor and the resident alike: durable construction, a transparent process, and full property management that turns a purchase into dependable income."
     ],
     "stats": [
-      { "value": "3", "label": "Years of experience" },
-      { "value": "3", "label": "Ongoing projects" }
+      {
+        "value": "3",
+        "label": "Years of experience"
+      },
+      {
+        "value": "3",
+        "label": "Ongoing projects"
+      }
     ]
   },
   "roi": {
@@ -85,18 +107,48 @@
     "subtitle": "Transparent assumptions on a sample studio, so the projected yield is something you can check — not just a number on a banner.",
     "assumptionsLabel": "Assumptions · sample Studio",
     "assumptions": [
-      { "label": "Example apartment price", "value": "$57,000" },
-      { "label": "Average nightly rate", "value": "$55" },
-      { "label": "Estimated monthly rental income", "value": "$1,000 – $1,200" },
-      { "label": "Expected occupancy", "value": "60 – 70%" },
-      { "label": "Management fee", "value": "20% of rental income" },
-      { "label": "Annual maintenance & fees", "value": "≈ $600" }
+      {
+        "label": "Example apartment price",
+        "value": "$57,000"
+      },
+      {
+        "label": "Average nightly rate",
+        "value": "$55"
+      },
+      {
+        "label": "Estimated monthly rental income",
+        "value": "$1,000 – $1,200"
+      },
+      {
+        "label": "Expected occupancy",
+        "value": "60 – 70%"
+      },
+      {
+        "label": "Management fee",
+        "value": "20% of rental income"
+      },
+      {
+        "label": "Annual maintenance & fees",
+        "value": "≈ $600"
+      }
     ],
     "scenariosLabel": "Estimated yearly net return",
     "scenarios": [
-      { "name": "Conservative", "detail": "55% occupancy", "net": "≈ 10%" },
-      { "name": "Average", "detail": "65% occupancy", "net": "≈ 13%" },
-      { "name": "Optimistic", "detail": "75% occupancy", "net": "≈ 15%" }
+      {
+        "name": "Conservative",
+        "detail": "55% occupancy",
+        "net": "≈ 10%"
+      },
+      {
+        "name": "Average",
+        "detail": "65% occupancy",
+        "net": "≈ 13%"
+      },
+      {
+        "name": "Optimistic",
+        "detail": "75% occupancy",
+        "net": "≈ 15%"
+      }
     ],
     "disclaimer": "Illustrative estimates based on current Batumi market rates; actual returns vary. The full model is available on request."
   },
@@ -313,9 +365,18 @@
     "heading": "Gallery",
     "all": "View all",
     "categories": [
-      { "slug": "exterior", "name": "Exterior" },
-      { "slug": "interior", "name": "Interior" },
-      { "slug": "facilities", "name": "Facilities" }
+      {
+        "slug": "exterior",
+        "name": "Exterior"
+      },
+      {
+        "slug": "interior",
+        "name": "Interior"
+      },
+      {
+        "slug": "facilities",
+        "name": "Facilities"
+      }
     ]
   },
   "overview": {
@@ -353,9 +414,18 @@
     "heading": "A measured return on a coastal asset.",
     "intro": "Batumi's tourism market is growing fast. Reverance is built to perform — for stable income today and rising value tomorrow.",
     "stats": [
-      { "value": "12–15%", "label": "Expected annual ROI" },
-      { "value": "60–70%", "label": "Expected occupancy" },
-      { "value": "2026", "label": "Project completion" }
+      {
+        "value": "12–15%",
+        "label": "Expected annual ROI"
+      },
+      {
+        "value": "60–70%",
+        "label": "Expected occupancy"
+      },
+      {
+        "value": "2026",
+        "label": "Project completion"
+      }
     ],
     "reasons": [
       {
@@ -385,9 +455,18 @@
     "heading": "Two addresses, one vision.",
     "subtitle": "Batumi, Georgia",
     "highlights": [
-      { "icon": "📍", "label": "750 m from the sea" },
-      { "icon": "✈️", "label": "Batumi International Airport – 5 minutes" },
-      { "icon": "🌴", "label": "Close to New Boulevard" }
+      {
+        "icon": "📍",
+        "label": "750 m from the sea"
+      },
+      {
+        "icon": "✈️",
+        "label": "Batumi International Airport – 5 minutes"
+      },
+      {
+        "icon": "🌴",
+        "label": "Close to New Boulevard"
+      }
     ],
     "constructionLabel": "Construction site",
     "construction": "Adlia 3rd Lane #1, Batumi, Georgia",
@@ -451,11 +530,22 @@
     "officeValue": "Anatoli Kacharava Street #5, Batumi, Georgia"
   },
   "cta": {
-    "investment": { "title": "Ready to see the numbers?", "button": "Request Investment Presentation" },
-    "apartments": { "title": "Want the plans and pricing?", "button": "Get Apartment Plans & ROI Model" },
-    "location": { "title": "Questions about Batumi?", "button": "Talk to an Investment Advisor" }
+    "investment": {
+      "title": "Ready to see the numbers?",
+      "button": "Request Investment Presentation"
+    },
+    "apartments": {
+      "title": "Want the plans and pricing?",
+      "button": "Get Apartment Plans & ROI Model"
+    },
+    "location": {
+      "title": "Questions about Batumi?",
+      "button": "Talk to an Investment Advisor"
+    }
   },
-  "video": { "label": "Take a video tour" },
+  "video": {
+    "label": "Take a video tour"
+  },
   "thankYou": {
     "eyebrow": "Request received",
     "title": "Thank you — we'll be in touch.",
@@ -478,7 +568,10 @@
       {
         "heading": "What Data Do We Collect?",
         "blocks": [
-          { "text": "Our company collects data including, but not limited to:", "items": [] },
+          {
+            "text": "Our company collects data including, but not limited to:",
+            "items": []
+          },
           {
             "text": "",
             "items": [
@@ -511,7 +604,10 @@
       {
         "heading": "How Will We Use Your Data?",
         "blocks": [
-          { "text": "Our company collects your data so that we can:", "items": [] },
+          {
+            "text": "Our company collects your data so that we can:",
+            "items": []
+          },
           {
             "text": "",
             "items": [
@@ -543,7 +639,10 @@
       {
         "heading": "What Rights Do You Have?",
         "blocks": [
-          { "text": "You have the right to:", "items": [] },
+          {
+            "text": "You have the right to:",
+            "items": []
+          },
           {
             "text": "",
             "items": [
@@ -554,7 +653,10 @@
               "Request transfer of your data to another organization or directly to you"
             ]
           },
-          { "text": "We will respond to all requests within 10 business days.", "items": [] }
+          {
+            "text": "We will respond to all requests within 10 business days.",
+            "items": []
+          }
         ]
       },
       {
@@ -568,7 +670,10 @@
             "text": "We may collect information automatically through cookies or similar technologies.",
             "items": []
           },
-          { "text": "For more information about cookies, visit allaboutcookies.org.", "items": [] }
+          {
+            "text": "For more information about cookies, visit allaboutcookies.org.",
+            "items": []
+          }
         ]
       }
     ]
