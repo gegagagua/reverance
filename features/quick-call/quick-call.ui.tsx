@@ -11,6 +11,7 @@ export interface QuickCallContent {
   button: string
   sending: string
   error: string
+  rateLimited: string
 }
 
 /**
@@ -59,6 +60,11 @@ export function QuickCall({
       {q.status === 'error' && (
         <p className={cn('text-sm', dark ? 'text-red-300' : 'text-red-600')} role="alert">
           {content.error}
+        </p>
+      )}
+      {q.status === 'rateLimited' && (
+        <p className={cn('text-sm', dark ? 'text-amber-200' : 'text-amber-700')} role="status">
+          {content.rateLimited}
         </p>
       )}
     </form>

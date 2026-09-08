@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type LeadStatus = 'idle' | 'submitting' | 'error'
+export type LeadStatus = 'idle' | 'submitting' | 'error' | 'rateLimited'
 
 interface LeadFields {
   name: string

@@ -42,6 +42,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     button: dict.hero.cta,
     sending: dict.leadForm.sending,
     error: dict.leadForm.error,
+    rateLimited: dict.leadForm.rateLimited,
   }
 
   return (

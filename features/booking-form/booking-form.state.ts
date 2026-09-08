@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type BookingStatus = 'idle' | 'submitting' | 'success' | 'error'
+export type BookingStatus = 'idle' | 'submitting' | 'success' | 'error' | 'rateLimited'
 
 export interface BookingFields {
   name: string

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { getClientIp, recordSubmission, remainingBlockSeconds } from '@/lib/rate-limit'
 
 /** Upstream CRM lead endpoint (same target the legacy site posts to). */
 const CRM_ENDPOINT = 'https://crm.otium.ge/rest/local/callRequestAPI.php'
@@ -33,6 +34,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: false, message: 'Phone is required' }, { status: 422 })
   }
 
+  // 24-hour per-IP throttle. A successful submission locks the caller out until
+  // the window expires, so refresh-spamming the form can't flood the CRM.
+  const ip = getClientIp(request.headers)
+  if (ip) {
+    const remaining = await remainingBlockSeconds(ip)
+    if (remaining > 0) {
+      return NextResponse.json(
+        { success: false, message: 'Rate limited', retryAfter: remaining },
+        { status: 429, headers: { 'Retry-After': String(remaining) } }
+      )
+    }
+  }
+
   const payload: CrmPayload = {
     name,
     phone,
@@ -52,6 +66,7 @@ export async function POST(request: Request) {
     if (!upstream.ok) {
       return NextResponse.json({ success: false, message: 'Failed to submit request' }, { status: 502 })
     }
+    if (ip) await recordSubmission(ip)
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ success: false, message: 'CRM request failed' }, { status: 500 })

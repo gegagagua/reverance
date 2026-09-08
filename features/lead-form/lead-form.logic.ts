@@ -58,6 +58,10 @@ export function useLeadForm(locale: Locale) {
             answers: { apartment, cta_source: LEAD_SOURCE, ...getUtm() },
           }),
         })
+        if (res.status === 429) {
+          setStatus('rateLimited')
+          return
+        }
         if (!res.ok) throw new Error('CRM submission failed')
         track('form_submission', { apartment, source: LEAD_SOURCE })
         trackLead(LEAD_EVENT, { source: LEAD_SOURCE })

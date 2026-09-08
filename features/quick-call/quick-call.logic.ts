@@ -51,6 +51,10 @@ export function useQuickCall(
             answers: { apartment: apartment ?? '', cta_source: source, ...getUtm() },
           }),
         })
+        if (res.status === 429) {
+          setStatus('rateLimited')
+          return
+        }
         if (!res.ok) throw new Error('CRM submission failed')
         track('form_submission', { apartment: apartment ?? '', source })
         if (leadEvent) trackLead(leadEvent, { source })

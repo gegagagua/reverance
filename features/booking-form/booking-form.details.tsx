@@ -79,6 +79,11 @@ export function BookingDetails({ f, content, locale }: Props) {
           {content.error}
         </p>
       )}
+      {f.status === 'rateLimited' && (
+        <p role="status" className="text-sm text-amber-700">
+          {content.rateLimited}
+        </p>
+      )}
       <p className="text-xs leading-relaxed text-foreground/50">
         {content.privacy}{' '}
         <a href={`/${locale}/privacy`} className="underline hover:text-foreground">

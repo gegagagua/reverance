@@ -81,7 +81,8 @@
     "apartmentOptions": ["Studio", "1BR", "2BR", "Not sure"],
     "submit": "Get the offer",
     "sending": "Sending…",
-    "error": "Please check your name and phone and try again."
+    "error": "Please check your name and phone and try again.",
+    "rateLimited": "We've already received your request. Our team will be in touch — please try again later or call us directly."
   },
   "about": {
     "eyebrow": "About Otium",
@@ -518,6 +519,7 @@
     "sending": "Sending…",
     "success": "Thank you. We will contact you shortly.",
     "error": "Please check your details and try again.",
+    "rateLimited": "We've already received your request. Our team will be in touch — please try again later or call us directly.",
     "privacy": "By submitting this form you agree that your personal data may be used to contact you about this project. See our Privacy Policy.",
     "privacyLink": "Privacy Policy",
     "callLabel": "Central office",

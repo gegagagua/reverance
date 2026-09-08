@@ -65,6 +65,11 @@ export function LeadForm({ content, locale }: { content: Dictionary['leadForm'];
                 {content.error}
               </p>
             )}
+            {f.status === 'rateLimited' && (
+              <p className="text-sm text-amber-700 sm:col-span-2" role="status">
+                {content.rateLimited}
+              </p>
+            )}
           </form>
         </div>
       </Container>

@@ -58,6 +58,10 @@ export function useBookingForm(locale: Locale, leadEvent?: string, startEvent?: 
             answers: { apartment, channel, time, cta_source: source, ...getUtm() },
           }),
         })
+        if (res.status === 429) {
+          setStatus('rateLimited')
+          return
+        }
         if (!res.ok) throw new Error('CRM submission failed')
         track('form_submission', { channel, apartment, source })
         if (leadEvent) trackLead(leadEvent, { source })

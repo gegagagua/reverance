@@ -65,6 +65,7 @@ export default async function LandingPage({ params }: Params) {
     button: dict.hero.cta,
     sending: dict.leadForm.sending,
     error: dict.leadForm.error,
+    rateLimited: dict.leadForm.rateLimited,
   }
 
   return (
