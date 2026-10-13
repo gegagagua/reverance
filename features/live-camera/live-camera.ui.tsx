@@ -5,7 +5,7 @@ import { liveCameras } from './live-camera.content'
 import { useLiveCamera } from './live-camera.logic'
 
 /**
- * The Live Camera modal — mounted once per page. Shows all three rtsp.me feeds
+ * The Live Camera modal — mounted once per page. Shows the rtsp.me feeds
  * side by side in a wide dialog. Iframes are only in the DOM while the modal is
  * open (Modal renders nothing when closed), so the streams never load early.
  */
@@ -16,7 +16,7 @@ export function LiveCameraModal({ label }: { label: string }) {
       <Heading as="h2" size="md" className="mb-4 shrink-0">
         {label}
       </Heading>
-      <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-3">
+      <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-2">
         {liveCameras.map((cam) => (
           <div key={cam.src} className="min-h-[40vh] overflow-hidden rounded-xl bg-black lg:min-h-0">
             <iframe
