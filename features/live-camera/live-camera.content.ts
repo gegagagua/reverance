@@ -2,6 +2,6 @@
  * Same feeds for every locale, so they live here rather than in the dictionary. */
 export const liveCameras = [
   // { title: 'Camera 1', src: 'https://rtsp.me/embed/RS36xKYe4mONyiqo/' },
-  { title: 'Camera 2', src: 'https://rtsp.me/embed/morftcb9C6xoK7pC/' },
-  { title: 'Camera 3', src: 'https://rtsp.me/embed/cjqMMdMUeCELjrBN/' },
+  { title: 'Camera 2', src: 'https://rtsp.me/embed/HRaYMYZoonvENBRz/' },
+  { title: 'Camera 3', src: 'https://rtsp.me/embed/R03dQHA74eITWHkE/' },
 ] as const
